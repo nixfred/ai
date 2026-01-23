@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Fred Nix | AI Practice Manager</title>
 
     <!-- Open Graph / Social Share -->
@@ -47,6 +49,7 @@
 
         html {
             scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
@@ -55,6 +58,11 @@
             color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
+            -webkit-overflow-scrolling: touch;
+            padding-top: env(safe-area-inset-top);
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
+            padding-bottom: env(safe-area-inset-bottom);
         }
 
         /* ========================================== */
@@ -1596,6 +1604,92 @@
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
+            }
+        }
+
+        /* ========================================== */
+        /* IPHONE SPECIFIC FIXES */
+        /* ========================================== */
+        @supports (-webkit-touch-callout: none) {
+            /* iOS only */
+            body {
+                min-height: -webkit-fill-available;
+            }
+
+            .hero {
+                min-height: -webkit-fill-available;
+            }
+
+            /* Fix sticky hover states on iOS */
+            .card:hover,
+            .contact-link:hover,
+            .nav-links a:hover {
+                transform: none;
+            }
+
+            /* Better tap targets */
+            .nav-links a,
+            .contact-link,
+            .card-tag {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+
+            /* Smooth carousel scroll */
+            .carousel-track {
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+            }
+
+            .carousel-item {
+                scroll-snap-align: start;
+            }
+        }
+
+        /* Fix for iPhone notch/dynamic island */
+        @media screen and (max-width: 430px) {
+            nav {
+                padding-top: max(1rem, env(safe-area-inset-top));
+                padding-left: max(1rem, env(safe-area-inset-left));
+                padding-right: max(1rem, env(safe-area-inset-right));
+            }
+
+            .hero {
+                padding-top: calc(80px + env(safe-area-inset-top));
+            }
+
+            section {
+                padding-left: max(1rem, env(safe-area-inset-left));
+                padding-right: max(1rem, env(safe-area-inset-right));
+            }
+
+            /* Larger touch targets for mobile */
+            .nav-toggle span {
+                height: 3px;
+                margin: 5px 0;
+            }
+
+            .card-tag {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            /* Prevent horizontal scroll issues */
+            .split-image img,
+            .carousel-item img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Better text readability */
+            p {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            h4 {
+                font-size: 1.1rem;
             }
         }
     </style>
