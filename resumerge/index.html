@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Fred Nix Jr. | AI Infrastructure Architect - Resume Portfolio</title>
+
+    <!-- Open Graph / Social Share -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nixfred.com/ai/resumerge/">
+    <meta property="og:title" content="Fred Nix Jr. | AI Infrastructure Architect">
+    <meta property="og:description" content="Resume Portfolio - BTA AI Pod Architect | 184GB VRAM | 4x NVIDIA L40S | 100k+ AI Sessions">
+    <meta property="og:image" content="https://nixfred.com/ai/share-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fred Nix Jr. | AI Infrastructure Architect">
+    <meta name="twitter:description" content="Resume Portfolio - BTA AI Pod Architect | Building Production AI Infrastructure">
+    <meta name="twitter:image" content="https://nixfred.com/ai/share-image.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-cyan: #7eb8da;
+            --neon-magenta: #b794c0;
+            --neon-green: #7dcea0;
+            --neon-orange: #e8a467;
+            --neon-purple: #9d8ac7;
+            --neon-yellow: #d4b55a;
+            --neon-red: #e06c75;
+            --dark-bg: #0a0a0f;
+            --darker-bg: #050508;
+            --card-bg: rgba(15, 15, 25, 0.8);
+            --card-border: rgba(126, 184, 218, 0.2);
+            --text-primary: #e0e0e0;
+            --text-secondary: #999;
+            --grid-color: rgba(126, 184, 218, 0.03);
+            --larry-cyan: #00d4ff;
+            --larry-glow: rgba(0, 212, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* ========================================== */
+        /* ANIMATED GRID BACKGROUND */
+        /* ========================================== */
+        .grid-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* ========================================== */
+        /* NAVIGATION */
+        /* ========================================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--neon-cyan);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--neon-cyan);
+        }
+
+        .nav-download {
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            color: var(--dark-bg) !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--larry-glow);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--neon-cyan);
+            transition: 0.3s;
+        }
+
+        /* ========================================== */
+        /* HERO SECTION */
+        /* ========================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+
+        .hero-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,
+                rgba(10, 10, 15, 0.3) 0%,
+                rgba(10, 10, 15, 0.7) 50%,
+                rgba(10, 10, 15, 1) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-yellow));
+            color: var(--dark-bg);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--neon-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .hero-location {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--neon-orange);
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .hero-contact a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .hero-contact a:hover {
+            color: var(--neon-cyan);
+        }
+
+        .hero-cta {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            color: var(--dark-bg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px var(--larry-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+        }
+
+        .btn-secondary:hover {
+            background: var(--neon-cyan);
+            color: var(--dark-bg);
+        }
+
+        /* ========================================== */
+        /* SECTION STYLING */
+        /* ========================================== */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ========================================== */
+        /* LARRY SECTION - 35% */
+        /* ========================================== */
+        .larry-section {
+            background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .larry-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, var(--larry-glow) 0%, transparent 70%);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .larry-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .larry-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--larry-cyan);
+            margin-bottom: 1.5rem;
+        }
+
+        .larry-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .larry-highlight {
+            background: var(--card-bg);
+            border: 1px solid var(--larry-cyan);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .larry-highlight-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .larry-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--larry-cyan), var(--neon-purple));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--dark-bg);
+            font-size: 1.2rem;
+        }
+
+        .larry-highlight h4 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .larry-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .larry-stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+        }
+
+        .larry-stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--larry-cyan);
+            font-weight: 700;
+        }
+
+        .larry-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .larry-image {
+            position: relative;
+        }
+
+        .larry-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+        }
+
+        .larry-capabilities {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .larry-cap-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .larry-cap-card:hover {
+            border-color: var(--larry-cyan);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--larry-glow);
+        }
+
+        .larry-cap-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--larry-cyan), var(--neon-purple));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--dark-bg);
+            font-size: 0.9rem;
+        }
+
+        .larry-cap-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .larry-cap-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* ========================================== */
+        /* BTA SECTION - THE STAR 50% */
+        /* ========================================== */
+        .bta-section {
+            background: var(--dark-bg);
+        }
+
+        .bta-hero {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 4rem;
+        }
+
+        .bta-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .bta-hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+
+        .bta-hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.9) 0%, rgba(10, 10, 15, 0.7) 100%);
+        }
+
+        .bta-hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 4rem;
+        }
+
+        .bta-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-yellow));
+            color: var(--dark-bg);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .bta-hero h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .bta-hero .company {
+            font-size: 1.3rem;
+            color: var(--neon-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .bta-hero .dates {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .bta-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            line-height: 1.8;
+        }
+
+        .bta-accomplishments {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .bta-accomplishment {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bta-accomplishment::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--neon-orange), var(--neon-cyan));
+        }
+
+        .bta-accomplishment h4 {
+            font-size: 1.1rem;
+            color: var(--neon-orange);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .bta-accomplishment p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .bta-tech-focus {
+            background: var(--darker-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .bta-tech-focus h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .bta-tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .bta-tech-tag {
+            background: var(--card-bg);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .bta-tech-tag:hover {
+            background: var(--neon-cyan);
+            color: var(--dark-bg);
+        }
+
+        .bta-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .bta-image {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .bta-image:hover {
+            transform: scale(1.03);
+        }
+
+        .bta-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .bta-image-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            padding: 2rem 1rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        /* Skill Icons Grid - 9 icons */
+        .skill-icons-grid {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .skill-icon-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .skill-icon-card:hover {
+            border-color: var(--neon-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(232, 164, 103, 0.2);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-yellow));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.8rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--dark-bg);
+            font-size: 0.8rem;
+        }
+
+        .skill-icon-card span {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* ========================================== */
+        /* PREVIOUS JOBS - MUTED 15% */
+        /* ========================================== */
+        .history-section {
+            background: var(--darker-bg);
+            opacity: 0.9;
+        }
+
+        .history-section .section-header h2 {
+            color: var(--text-secondary);
+        }
+
+        .history-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--card-border);
+            transform: translateX(-50%);
+        }
+
+        .history-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .history-item:nth-child(odd) {
+            justify-content: flex-start;
+            padding-right: 52%;
+        }
+
+        .history-item:nth-child(even) {
+            justify-content: flex-end;
+            padding-left: 52%;
+        }
+
+        .history-dot {
+            position: absolute;
+            left: 50%;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--text-secondary);
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .history-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .history-card:hover {
+            border-color: var(--text-secondary);
+        }
+
+        .history-card .dates {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .history-card h4 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .history-card .company {
+            font-size: 0.9rem;
+            color: var(--neon-cyan);
+            margin-bottom: 0.8rem;
+        }
+
+        .history-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .history-card .highlight {
+            color: var(--neon-green);
+            font-weight: 500;
+        }
+
+        .history-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .history-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ========================================== */
+        /* SKILLS & EDUCATION */
+        /* ========================================== */
+        .skills-section {
+            background: var(--dark-bg);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+
+        .skill-category h4 {
+            font-size: 0.9rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .skill-category li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--neon-orange);
+        }
+
+        .education-awards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .edu-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .edu-card h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .edu-card .highlight {
+            color: var(--neon-orange);
+            font-weight: 600;
+        }
+
+        /* ========================================== */
+        /* FULL GALLERY */
+        /* ========================================== */
+        .gallery-section {
+            background: var(--darker-bg);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            padding: 3rem 1rem 1rem;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* ========================================== */
+        /* CONTACT & DOWNLOAD */
+        /* ========================================== */
+        .contact-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .contact-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        .contact-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, transparent 30%, transparent 70%, var(--dark-bg) 100%);
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .contact-content h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .contact-content p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--neon-cyan);
+            transform: translateY(-3px);
+        }
+
+        .contact-link-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--neon-cyan);
+        }
+
+        /* ========================================== */
+        /* DOWNLOAD MODAL */
+        /* ========================================== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--neon-cyan);
+            border-radius: 30px;
+            padding: 3rem;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            animation: modalSlide 0.4s ease;
+            box-shadow: 0 0 60px var(--larry-glow);
+        }
+
+        @keyframes modalSlide {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--neon-cyan);
+        }
+
+        .modal-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 var(--larry-glow); }
+            50% { box-shadow: 0 0 30px 10px var(--larry-glow); }
+        }
+
+        .modal-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .modal-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-contact {
+            background: var(--darker-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .modal-contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-contact-item span:first-child {
+            color: var(--neon-cyan);
+            width: 20px;
+        }
+
+        .modal-progress {
+            height: 4px;
+            background: var(--card-border);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .modal-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        /* ========================================== */
+        /* LIGHTBOX */
+        /* ========================================== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* ========================================== */
+        /* ANIMATIONS */
+        /* ========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========================================== */
+        /* RESPONSIVE */
+        /* ========================================== */
+        @media (max-width: 1024px) {
+            .larry-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .larry-stats,
+            .larry-capabilities {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bta-accomplishments {
+                grid-template-columns: 1fr;
+            }
+
+            .bta-images {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skill-icons-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .history-timeline::before {
+                left: 20px;
+            }
+
+            .history-item,
+            .history-item:nth-child(odd),
+            .history-item:nth-child(even) {
+                padding-left: 50px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .history-dot {
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 15, 0.98);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .larry-stats,
+            .larry-capabilities {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-icons-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .bta-hero-content {
+                padding: 2rem;
+            }
+
+            .bta-images {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-awards {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .skill-icons-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* iPhone specific */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                min-height: -webkit-fill-available;
+            }
+        }
+
+        @media screen and (max-width: 430px) {
+            nav {
+                padding-top: max(1rem, env(safe-area-inset-top));
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .grid-background,
+            nav,
+            .modal-overlay,
+            .lightbox,
+            .btn {
+                display: none !important;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">FRED NIX JR.</div>
+        <div class="nav-toggle" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero" class="active">Home</a>
+            <a href="#larry">AI Development</a>
+            <a href="#bta">BTA AI Pod</a>
+            <a href="#history">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <a href="#" class="nav-download" onclick="showDownloadModal(event)">Download PDF</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <img src="../images/img01.png" alt="AI Infrastructure">
+        </div>
+        <div class="hero-content reveal">
+            <div class="hero-badge">Resume Portfolio 2026</div>
+            <h1>FRED NIX JR.</h1>
+            <div class="hero-title">AI Infrastructure Architect | ML Engineer</div>
+            <div class="hero-location">Atlanta, GA</div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">184GB</span>
+                    <span class="hero-stat-label">VRAM Deployed</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">4x</span>
+                    <span class="hero-stat-label">NVIDIA L40S</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">100k+</span>
+                    <span class="hero-stat-label">AI Sessions</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">100%</span>
+                    <span class="hero-stat-label">Career Quota</span>
+                </div>
+            </div>
+
+            <div class="hero-contact">
+                <a href="mailto:frednix@gmail.com">frednix@gmail.com</a>
+                <a href="tel:+14049538305">(404) 953-8305</a>
+                <a href="https://linkedin.com/in/nixfreak" target="_blank">LinkedIn</a>
+                <a href="https://github.com/nixfreak" target="_blank">GitHub</a>
+            </div>
+
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="showDownloadModal(event)">Download Resume PDF</button>
+                <a href="#bta" class="btn btn-secondary">View BTA Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LARRY SECTION - 35% -->
+    <section id="larry" class="larry-section">
+        <div class="section-header reveal">
+            <span class="section-tag">Currently Building</span>
+            <h2>AI-AUGMENTED DEVELOPMENT</h2>
+            <p>Building with Larry - 100,000+ AI-human collaboration sessions</p>
+        </div>
+
+        <div class="larry-grid">
+            <div class="larry-content reveal">
+                <h3>Meet Larry: My AI Development Partner</h3>
+                <p>
+                    Larry is my Personal AI Infrastructure (PAI) - a custom Claude Code environment
+                    that I've built and refined over 100,000+ collaborative sessions. This isn't just
+                    using AI tools - it's building a persistent, learning system that understands my
+                    workflows, preferences, and project history.
+                </p>
+                <p>
+                    Every session is preserved. Every solution is remembered. Larry doesn't just help
+                    me code - Larry helps me think through architecture decisions, debug production
+                    issues, and build infrastructure that scales.
+                </p>
+
+                <div class="larry-highlight">
+                    <div class="larry-highlight-header">
+                        <div class="larry-icon">PAI</div>
+                        <div>
+                            <h4>Personal AI Infrastructure</h4>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                        A custom skill system with session preservation, cross-project learning,
+                        and human-AI collaboration workflows that compound knowledge over time.
+                    </p>
+                </div>
+
+                <div class="larry-stats">
+                    <div class="larry-stat">
+                        <div class="larry-stat-number">100k+</div>
+                        <div class="larry-stat-label">AI Sessions</div>
+                    </div>
+                    <div class="larry-stat">
+                        <div class="larry-stat-number">240+</div>
+                        <div class="larry-stat-label">Fabric Patterns</div>
+                    </div>
+                    <div class="larry-stat">
+                        <div class="larry-stat-number">50+</div>
+                        <div class="larry-stat-label">Custom Skills</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="larry-image reveal">
+                <img src="../images/img08.png" alt="AI Inference Lab">
+            </div>
+        </div>
+
+        <div class="larry-capabilities">
+            <div class="larry-cap-card reveal">
+                <div class="larry-cap-icon">DEV</div>
+                <h4>AI-Paired Development</h4>
+                <p>Claude Code integration with persistent context and project memory</p>
+            </div>
+            <div class="larry-cap-card reveal">
+                <div class="larry-cap-icon">MEM</div>
+                <h4>Session Persistence</h4>
+                <p>Every conversation preserved with full context recovery</p>
+            </div>
+            <div class="larry-cap-card reveal">
+                <div class="larry-cap-icon">SEC</div>
+                <h4>Security First</h4>
+                <p>Private infrastructure with air-gap support</p>
+            </div>
+            <div class="larry-cap-card reveal">
+                <div class="larry-cap-icon">OBS</div>
+                <h4>Observability</h4>
+                <p>Real-time monitoring of all AI agent activity</p>
+            </div>
+            <div class="larry-cap-card reveal">
+                <div class="larry-cap-icon">DATA</div>
+                <h4>Knowledge Graphs</h4>
+                <p>Connected learning across all projects</p>
+            </div>
+            <div class="larry-cap-card reveal">
+                <div class="larry-cap-icon">AI</div>
+                <h4>Multi-Model</h4>
+                <p>Opus, Sonnet, Haiku orchestration</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BTA SECTION - THE STAR 50% -->
+    <section id="bta" class="bta-section">
+        <div class="section-header reveal">
+            <span class="section-tag">Featured Position</span>
+            <h2>BTA AI POD ARCHITECT</h2>
+            <p>Building production-grade AI infrastructure for enterprise deployment</p>
+        </div>
+
+        <div class="bta-hero reveal">
+            <div class="bta-hero-bg">
+                <img src="../images/img02.png" alt="GPU Cluster">
+            </div>
+            <div class="bta-hero-content">
+                <div class="bta-badge">Current Role - March 2025</div>
+                <h3>Storage & Compute Practice Manager / AI Pod Architect</h3>
+                <div class="company">Business Technology Architects (BTA), Alpharetta, GA</div>
+                <div class="dates">March 2025 - Present</div>
+                <p>
+                    Develops production-grade AI inference platforms for enterprise deployment.
+                    Focuses on reproducible infrastructure and comprehensive training for Cisco Partners
+                    leveraging Cisco UCS X-Series, NVIDIA GPU clusters, and Pure Storage.
+                </p>
+            </div>
+        </div>
+
+        <div class="bta-accomplishments">
+            <div class="bta-accomplishment reveal">
+                <h4>Enterprise AI Inference Platform</h4>
+                <p>Created enterprise AI inference platform enabling private, air-gapped LLM systems for regulated sectors including healthcare, finance, and government.</p>
+            </div>
+            <div class="bta-accomplishment reveal">
+                <h4>One-Command Deployment</h4>
+                <p>Achieved one-command deployment with 100% success rate across all partner rollouts - from bare metal to running inference in minutes.</p>
+            </div>
+            <div class="bta-accomplishment reveal">
+                <h4>Multi-Model Platform</h4>
+                <p>Built multi-model platform supporting dynamic model switching between LLaMA, Mistral, and custom fine-tuned models with hot-swap capability.</p>
+            </div>
+            <div class="bta-accomplishment reveal">
+                <h4>ChatGPT-Like Interface</h4>
+                <p>Developed ChatGPT-like interface with streaming responses and live GPU metrics dashboard showing real-time utilization and inference statistics.</p>
+            </div>
+            <div class="bta-accomplishment reveal">
+                <h4>OpenAI-Compatible API</h4>
+                <p>Implemented OpenAI-compatible API enabling seamless LangChain and LlamaIndex integration for enterprise RAG applications.</p>
+            </div>
+            <div class="bta-accomplishment reveal">
+                <h4>Partner Enablement</h4>
+                <p>Trained Cisco Partners on AI infrastructure deployment, creating hands-on labs and comprehensive documentation for repeatable success.</p>
+            </div>
+        </div>
+
+        <!-- All 9 Skill Icons -->
+        <div class="skill-icons-grid reveal">
+            <div class="skill-icon-card">
+                <div class="skill-icon">GPU</div>
+                <span>GPU Infra</span>
+            </div>
+            <div class="skill-icon-card">
+                <div class="skill-icon">K8s</div>
+                <span>Kubernetes</span>
+            </div>
+            <div class="skill-icon-card">
+                <div class="skill-icon">AI</div>
+                <span>LLM Ops</span>
+            </div>
+            <div class="skill-icon-card">
+                <div class="skill-icon">NET</div>
+                <span>Network</span>
+            </div>
+            <div class="skill-icon-card">
+                <div class="skill-icon">OBS</div>
+                <span>Observability</span>
+            </div>
+            <div class="skill-icon-card">
+                <div class="skill-icon">DEV</div>
+                <span>AI Dev</span>
+            </div>
+            <div class="skill-icon-card">
+                <div class="skill-icon">MEM</div>
+                <span>Sessions</span>
+            </div>
+            <div class="skill-icon-card">
+                <div class="skill-icon">DATA</div>
+                <span>Storage</span>
+            </div>
+            <div class="skill-icon-card">
+                <div class="skill-icon">SEC</div>
+                <span>Security</span>
+            </div>
+        </div>
+
+        <div class="bta-tech-focus reveal">
+            <h4>Technical Focus Areas</h4>
+            <div class="bta-tech-grid">
+                <span class="bta-tech-tag">vLLM Deployment</span>
+                <span class="bta-tech-tag">Model Quantization</span>
+                <span class="bta-tech-tag">Kubernetes</span>
+                <span class="bta-tech-tag">GPU Orchestration</span>
+                <span class="bta-tech-tag">RAG Architecture</span>
+                <span class="bta-tech-tag">Air-Gapped Security</span>
+                <span class="bta-tech-tag">NVIDIA L40S</span>
+                <span class="bta-tech-tag">Cisco UCS X-Series</span>
+                <span class="bta-tech-tag">Pure Storage</span>
+                <span class="bta-tech-tag">AWQ/GPTQ</span>
+                <span class="bta-tech-tag">Tensor Parallelism</span>
+                <span class="bta-tech-tag">OpenAI API</span>
+            </div>
+        </div>
+
+        <!-- BTA Images -->
+        <div class="bta-images">
+            <div class="bta-image reveal" onclick="openLightbox('../images/img03.png')">
+                <img src="../images/img03.png" alt="Network Operations">
+                <div class="bta-image-label">Network Operations Center</div>
+            </div>
+            <div class="bta-image reveal" onclick="openLightbox('../images/img04.png')">
+                <img src="../images/img04.png" alt="Neural Core">
+                <div class="bta-image-label">AI Neural Core</div>
+            </div>
+            <div class="bta-image reveal" onclick="openLightbox('../images/img05.png')">
+                <img src="../images/img05.png" alt="Control Room">
+                <div class="bta-image-label">Kubernetes Control Room</div>
+            </div>
+            <div class="bta-image reveal" onclick="openLightbox('../images/img06.png')">
+                <img src="../images/img06.png" alt="Monitoring">
+                <div class="bta-image-label">Monitoring Dashboards</div>
+            </div>
+            <div class="bta-image reveal" onclick="openLightbox('../images/img07.png')">
+                <img src="../images/img07.png" alt="Security">
+                <div class="bta-image-label">Security Operations</div>
+            </div>
+            <div class="bta-image reveal" onclick="openLightbox('../images/img10.png')">
+                <img src="../images/img10.png" alt="Cooling">
+                <div class="bta-image-label">Cooling Infrastructure</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREVIOUS JOBS - MUTED 15% -->
+    <section id="history" class="history-section">
+        <div class="section-header reveal">
+            <h2>CAREER HISTORY</h2>
+            <p>15+ years of enterprise technology and sales leadership</p>
+        </div>
+
+        <div class="history-timeline">
+            <div class="history-item reveal">
+                <div class="history-dot"></div>
+                <div class="history-card">
+                    <div class="history-image">
+                        <img src="../images/img09.png" alt="Storage">
+                    </div>
+                    <div class="dates">2023 - 2025</div>
+                    <h4>Partner / VP Sales</h4>
+                    <div class="company">EMOTO Electric Motorbikes</div>
+                    <p>Led sales strategy for electric bike distributor. <span class="highlight">Increased sales 225%</span> within first year. Expanded product line and scaled to regional market leader.</p>
+                </div>
+            </div>
+
+            <div class="history-item reveal">
+                <div class="history-dot"></div>
+                <div class="history-card">
+                    <div class="dates">2021 - 2023</div>
+                    <h4>Enterprise Sales Engineer</h4>
+                    <div class="company">Pure Storage</div>
+                    <p>Managed Fortune 100 relationships across Southeast. <span class="highlight">Delivered 250% of quota in 2021</span> - Global Rookie of the Year. 100% uptime during hurricane disaster recovery.</p>
+                </div>
+            </div>
+
+            <div class="history-item reveal">
+                <div class="history-dot"></div>
+                <div class="history-card">
+                    <div class="history-image">
+                        <img src="../images/img11.png" alt="Infrastructure">
+                    </div>
+                    <div class="dates">2019 - 2020</div>
+                    <h4>Converged Systems Presales vArchitect</h4>
+                    <div class="company">Dell Technologies</div>
+                    <p>Technical presales for software-defined storage and cloud. Supported major data center consolidation initiatives.</p>
+                </div>
+            </div>
+
+            <div class="history-item reveal">
+                <div class="history-dot"></div>
+                <div class="history-card">
+                    <div class="dates">2015 - 2019</div>
+                    <h4>Global Presales Director</h4>
+                    <div class="company">Reduxio</div>
+                    <p>Led US market entry as first American employee. <span class="highlight">Exceeded quotas 150%+ annually</span>. 90%+ conversion rate on 50+ POC projects.</p>
+                </div>
+            </div>
+
+            <div class="history-item reveal">
+                <div class="history-dot"></div>
+                <div class="history-card">
+                    <div class="dates">2010 - 2015</div>
+                    <h4>Global Presales Operations / vSpecialists PM</h4>
+                    <div class="company">EMC Corporation</div>
+                    <p>Managed operations for 5,500 Presales Engineers worldwide. <span class="highlight">Trained 1,000+ new engineers</span>. Grew vSpecialists from 30 to 150+ members.</p>
+                </div>
+            </div>
+
+            <div class="history-item reveal">
+                <div class="history-dot"></div>
+                <div class="history-card">
+                    <div class="dates">Earlier</div>
+                    <h4>Senior Roles</h4>
+                    <div class="company">Syscom, MTI, GT Software, Vitria, Windward, Kilpatrick Stockton, Medaphis</div>
+                    <p>CTO, Solutions Consulting, PreSales, Professional Services, and IT Administration roles building enterprise solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS & EDUCATION -->
+    <section id="skills" class="skills-section">
+        <div class="section-header reveal">
+            <h2>TECHNICAL SKILLS</h2>
+        </div>
+
+        <div class="skills-grid reveal">
+            <div class="skill-category">
+                <h4>AI / ML</h4>
+                <ul>
+                    <li>Large Language Models</li>
+                    <li>vLLM Deployment</li>
+                    <li>RAG Architecture</li>
+                    <li>Model Quantization</li>
+                    <li>OpenAI API</li>
+                    <li>LangChain / LlamaIndex</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Infrastructure</h4>
+                <ul>
+                    <li>NVIDIA GPU Computing</li>
+                    <li>Kubernetes / Docker</li>
+                    <li>Cisco UCS X-Series</li>
+                    <li>Pure Storage</li>
+                    <li>Air-Gapped Systems</li>
+                    <li>100GbE Networking</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Development</h4>
+                <ul>
+                    <li>Python / Flask</li>
+                    <li>TypeScript / Bun</li>
+                    <li>Full-Stack Development</li>
+                    <li>API Development</li>
+                    <li>ChatGPT-like UX</li>
+                    <li>Claude Code / PAI</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Operations</h4>
+                <ul>
+                    <li>Prometheus / Grafana</li>
+                    <li>GPU Monitoring (DCGM)</li>
+                    <li>GitOps Workflows</li>
+                    <li>Enterprise Security</li>
+                    <li>Partner Enablement</li>
+                    <li>Technical Training</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="education-awards reveal">
+            <div class="edu-card">
+                <h4>Education</h4>
+                <p><span class="highlight">Bachelor of Science</span><br>Business Administration - Information Systems<br>Auburn University</p>
+            </div>
+            <div class="edu-card">
+                <h4>Recognition</h4>
+                <p><span class="highlight">Pure Storage Global Rookie of the Year 2021</span><br>Delivering 250% of quota<br><br><span class="highlight">Achieved Annual Sales Quota - Entire Career</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL GALLERY - All 12 Images -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-header reveal">
+            <h2>INFRASTRUCTURE GALLERY</h2>
+            <p>Visual tour of AI infrastructure capabilities</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item reveal" data-label="Server Warehouse" onclick="openLightbox('../images/img01.png')">
+                <img src="../images/img01.png" alt="Server Warehouse">
+            </div>
+            <div class="gallery-item reveal" data-label="GPU Cluster" onclick="openLightbox('../images/img02.png')">
+                <img src="../images/img02.png" alt="GPU Cluster">
+            </div>
+            <div class="gallery-item reveal" data-label="Network Operations" onclick="openLightbox('../images/img03.png')">
+                <img src="../images/img03.png" alt="Network Operations">
+            </div>
+            <div class="gallery-item reveal" data-label="Neural Core" onclick="openLightbox('../images/img04.png')">
+                <img src="../images/img04.png" alt="Neural Core">
+            </div>
+            <div class="gallery-item reveal" data-label="K8s Control Room" onclick="openLightbox('../images/img05.png')">
+                <img src="../images/img05.png" alt="K8s Control Room">
+            </div>
+            <div class="gallery-item reveal" data-label="Monitoring Dashboards" onclick="openLightbox('../images/img06.png')">
+                <img src="../images/img06.png" alt="Monitoring Dashboards">
+            </div>
+            <div class="gallery-item reveal" data-label="Security Operations" onclick="openLightbox('../images/img07.png')">
+                <img src="../images/img07.png" alt="Security Operations">
+            </div>
+            <div class="gallery-item reveal" data-label="Inference Lab" onclick="openLightbox('../images/img08.png')">
+                <img src="../images/img08.png" alt="Inference Lab">
+            </div>
+            <div class="gallery-item reveal" data-label="Storage Arrays" onclick="openLightbox('../images/img09.png')">
+                <img src="../images/img09.png" alt="Storage Arrays">
+            </div>
+            <div class="gallery-item reveal" data-label="Cooling Systems" onclick="openLightbox('../images/img10.png')">
+                <img src="../images/img10.png" alt="Cooling Systems">
+            </div>
+            <div class="gallery-item reveal" data-label="Power Infrastructure" onclick="openLightbox('../images/img11.png')">
+                <img src="../images/img11.png" alt="Power Infrastructure">
+            </div>
+            <div class="gallery-item reveal" data-label="Command Center" onclick="openLightbox('../images/img12.png')">
+                <img src="../images/img12.png" alt="Command Center">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & DOWNLOAD -->
+    <section id="contact" class="contact-section">
+        <div class="contact-bg">
+            <img src="../images/img12.png" alt="Command Center">
+        </div>
+        <div class="contact-content">
+            <h2 class="reveal">LET'S BUILD SOMETHING</h2>
+            <p class="reveal">Ready to discuss AI infrastructure, enterprise deployments, or technical leadership?</p>
+
+            <div class="contact-links reveal">
+                <a href="mailto:frednix@gmail.com" class="contact-link">
+                    <span class="contact-link-icon">@</span>
+                    frednix@gmail.com
+                </a>
+                <a href="tel:+14049538305" class="contact-link">
+                    <span class="contact-link-icon">#</span>
+                    (404) 953-8305
+                </a>
+                <a href="https://linkedin.com/in/nixfreak" target="_blank" class="contact-link">
+                    <span class="contact-link-icon">in</span>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/nixfreak" target="_blank" class="contact-link">
+                    <span class="contact-link-icon">&lt;/&gt;</span>
+                    GitHub
+                </a>
+            </div>
+
+            <button class="btn btn-primary reveal" onclick="showDownloadModal(event)">Download Resume PDF</button>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD MODAL -->
+    <div class="modal-overlay" id="downloadModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-icon">PDF</div>
+            <h3>Preparing Your Download</h3>
+            <p>Thanks for your interest! Here's how to reach me:</p>
+
+            <div class="modal-contact">
+                <div class="modal-contact-item">
+                    <span>@</span>
+                    <span>frednix@gmail.com</span>
+                </div>
+                <div class="modal-contact-item">
+                    <span>#</span>
+                    <span>(404) 953-8305</span>
+                </div>
+                <div class="modal-contact-item">
+                    <span>in</span>
+                    <span>linkedin.com/in/nixfreak</span>
+                </div>
+            </div>
+
+            <div class="modal-progress">
+                <div class="modal-progress-bar" id="progressBar"></div>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--text-secondary);">Download starting automatically...</p>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img src="" alt="Full size image" id="lightboxImg">
+    </div>
+
+    <script>
+        // Navigation toggle
+        function toggleNav() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // Active nav link
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Download modal
+        function showDownloadModal(event) {
+            event.preventDefault();
+            const modal = document.getElementById('downloadModal');
+            const progressBar = document.getElementById('progressBar');
+
+            modal.classList.add('active');
+            progressBar.style.width = '0%';
+
+            // Animate progress
+            setTimeout(() => progressBar.style.width = '30%', 200);
+            setTimeout(() => progressBar.style.width = '60%', 600);
+            setTimeout(() => progressBar.style.width = '100%', 1000);
+
+            // Trigger download after animation
+            setTimeout(() => {
+                const link = document.createElement('a');
+                link.href = '/resume/FWN_CV_2026.pdf';
+                link.download = 'Fred_Nix_Resume_2026.pdf';
+                link.click();
+            }, 1500);
+
+            // Auto close after download
+            setTimeout(() => {
+                closeModal();
+            }, 3000);
+        }
+
+        function closeModal() {
+            document.getElementById('downloadModal').classList.remove('active');
+        }
+
+        // Click outside modal to close
+        document.getElementById('downloadModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeModal();
+            }
+        });
+
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // ESC to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeLightbox();
+            }
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                        // Close mobile nav
+                        document.querySelector('.nav-links').classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
