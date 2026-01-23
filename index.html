@@ -1623,51 +1623,82 @@
 
     <!-- The Challenge -->
     <section id="about">
-        <!-- GRAPHIC 2: Server Rack Illustration -->
-        <div class="server-rack-graphic">
-            <svg viewBox="0 0 400 300" class="rack-svg">
-                <!-- Rack Frame -->
-                <rect x="50" y="20" width="300" height="260" rx="10" fill="rgba(15,15,25,0.9)" stroke="#00f0ff" stroke-width="2"/>
+        <!-- GRAPHIC 2: Server Rack with Stats -->
+        <div class="server-rack-with-stats" style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; padding: 2rem;">
+            <!-- Left Stats -->
+            <div class="rack-stats-left" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="floating-stat" style="background: linear-gradient(135deg, rgba(118,185,0,0.2), rgba(0,0,0,0.3)); border: 2px solid #76b900; border-radius: 15px; padding: 1.5rem; text-align: center; min-width: 140px;">
+                    <div style="font-size: 2.5rem; font-family: Orbitron; color: #76b900; font-weight: bold;">184</div>
+                    <div style="font-size: 1rem; color: #76b900;">GB VRAM</div>
+                    <div style="font-size: 0.75rem; color: #888; margin-top: 0.25rem;">Orchestrated</div>
+                </div>
+                <div class="floating-stat" style="background: linear-gradient(135deg, rgba(0,240,255,0.2), rgba(0,0,0,0.3)); border: 2px solid #00f0ff; border-radius: 15px; padding: 1.5rem; text-align: center; min-width: 140px;">
+                    <div style="font-size: 2.5rem; font-family: Orbitron; color: #00f0ff; font-weight: bold;">9</div>
+                    <div style="font-size: 1rem; color: #00f0ff;">LLM Models</div>
+                    <div style="font-size: 0.75rem; color: #888; margin-top: 0.25rem;">Hot-Swappable</div>
+                </div>
+            </div>
 
-                <!-- Server Units -->
-                <g class="server-unit">
-                    <rect x="70" y="40" width="260" height="35" rx="3" fill="rgba(0,240,255,0.1)" stroke="#00f0ff" stroke-width="1"/>
-                    <circle cx="90" cy="57" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/></circle>
-                    <circle cx="110" cy="57" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/></circle>
-                    <rect x="280" y="48" width="30" height="18" rx="2" fill="rgba(0,255,136,0.3)"/>
-                    <text x="200" y="62" text-anchor="middle" fill="#888" font-family="JetBrains Mono" font-size="10">CONTROL PLANE</text>
-                </g>
+            <!-- Server Rack -->
+            <div class="server-rack-graphic">
+                <svg viewBox="0 0 400 300" class="rack-svg">
+                    <!-- Rack Frame -->
+                    <rect x="50" y="20" width="300" height="260" rx="10" fill="rgba(15,15,25,0.9)" stroke="#00f0ff" stroke-width="2"/>
 
-                <g class="server-unit">
-                    <rect x="70" y="85" width="260" height="35" rx="3" fill="rgba(255,0,255,0.1)" stroke="#ff00ff" stroke-width="1"/>
-                    <circle cx="90" cy="102" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite"/></circle>
-                    <circle cx="110" cy="102" r="5" fill="#eab308"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
-                    <rect x="250" y="93" width="60" height="18" rx="2" fill="rgba(118,185,0,0.5)"/>
-                    <text x="280" y="106" text-anchor="middle" fill="#fff" font-size="8">L40S</text>
-                    <text x="170" y="107" text-anchor="middle" fill="#888" font-family="JetBrains Mono" font-size="10">GPU NODE 1</text>
-                </g>
+                    <!-- Server Units -->
+                    <g class="server-unit">
+                        <rect x="70" y="40" width="260" height="35" rx="3" fill="rgba(0,240,255,0.1)" stroke="#00f0ff" stroke-width="1"/>
+                        <circle cx="90" cy="57" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/></circle>
+                        <circle cx="110" cy="57" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/></circle>
+                        <rect x="280" y="48" width="30" height="18" rx="2" fill="rgba(0,255,136,0.3)"/>
+                        <text x="200" y="62" text-anchor="middle" fill="#888" font-family="JetBrains Mono" font-size="10">CONTROL PLANE</text>
+                    </g>
 
-                <g class="server-unit">
-                    <rect x="70" y="130" width="260" height="35" rx="3" fill="rgba(255,0,255,0.1)" stroke="#ff00ff" stroke-width="1"/>
-                    <circle cx="90" cy="147" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1.1s" repeatCount="indefinite"/></circle>
-                    <circle cx="110" cy="147" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.9s" repeatCount="indefinite"/></circle>
-                    <rect x="250" y="138" width="60" height="18" rx="2" fill="rgba(118,185,0,0.5)"/>
-                    <text x="280" y="151" text-anchor="middle" fill="#fff" font-size="8">L40S</text>
-                    <text x="170" y="152" text-anchor="middle" fill="#888" font-family="JetBrains Mono" font-size="10">GPU NODE 2</text>
-                </g>
+                    <g class="server-unit">
+                        <rect x="70" y="85" width="260" height="35" rx="3" fill="rgba(255,0,255,0.1)" stroke="#ff00ff" stroke-width="1"/>
+                        <circle cx="90" cy="102" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite"/></circle>
+                        <circle cx="110" cy="102" r="5" fill="#eab308"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
+                        <rect x="250" y="93" width="60" height="18" rx="2" fill="rgba(118,185,0,0.5)"/>
+                        <text x="280" y="106" text-anchor="middle" fill="#fff" font-size="8">L40S</text>
+                        <text x="170" y="107" text-anchor="middle" fill="#888" font-family="JetBrains Mono" font-size="10">GPU NODE 1</text>
+                    </g>
 
-                <g class="server-unit">
-                    <rect x="70" y="175" width="260" height="35" rx="3" fill="rgba(234,179,8,0.1)" stroke="#eab308" stroke-width="1"/>
-                    <circle cx="90" cy="192" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1.3s" repeatCount="indefinite"/></circle>
-                    <text x="200" y="197" text-anchor="middle" fill="#888" font-family="JetBrains Mono" font-size="10">STORAGE / NFS</text>
-                </g>
+                    <g class="server-unit">
+                        <rect x="70" y="130" width="260" height="35" rx="3" fill="rgba(255,0,255,0.1)" stroke="#ff00ff" stroke-width="1"/>
+                        <circle cx="90" cy="147" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1.1s" repeatCount="indefinite"/></circle>
+                        <circle cx="110" cy="147" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.9s" repeatCount="indefinite"/></circle>
+                        <rect x="250" y="138" width="60" height="18" rx="2" fill="rgba(118,185,0,0.5)"/>
+                        <text x="280" y="151" text-anchor="middle" fill="#fff" font-size="8">L40S</text>
+                        <text x="170" y="152" text-anchor="middle" fill="#888" font-family="JetBrains Mono" font-size="10">GPU NODE 2</text>
+                    </g>
 
-                <g class="server-unit">
-                    <rect x="70" y="220" width="260" height="35" rx="3" fill="rgba(168,85,247,0.1)" stroke="#a855f7" stroke-width="1"/>
-                    <circle cx="90" cy="237" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.7s" repeatCount="indefinite"/></circle>
-                    <text x="200" y="242" text-anchor="middle" fill="#888" font-family="JetBrains Mono" font-size="10">OBSERVABILITY</text>
-                </g>
-            </svg>
+                    <g class="server-unit">
+                        <rect x="70" y="175" width="260" height="35" rx="3" fill="rgba(234,179,8,0.1)" stroke="#eab308" stroke-width="1"/>
+                        <circle cx="90" cy="192" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1.3s" repeatCount="indefinite"/></circle>
+                        <text x="200" y="197" text-anchor="middle" fill="#888" font-family="JetBrains Mono" font-size="10">STORAGE / NFS</text>
+                    </g>
+
+                    <g class="server-unit">
+                        <rect x="70" y="220" width="260" height="35" rx="3" fill="rgba(168,85,247,0.1)" stroke="#a855f7" stroke-width="1"/>
+                        <circle cx="90" cy="237" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.7s" repeatCount="indefinite"/></circle>
+                        <text x="200" y="242" text-anchor="middle" fill="#888" font-family="JetBrains Mono" font-size="10">OBSERVABILITY</text>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Right Stats -->
+            <div class="rack-stats-right" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="floating-stat" style="background: linear-gradient(135deg, rgba(255,0,255,0.2), rgba(0,0,0,0.3)); border: 2px solid #ff00ff; border-radius: 15px; padding: 1.5rem; text-align: center; min-width: 140px;">
+                    <div style="font-size: 2.5rem; font-family: Orbitron; color: #ff00ff; font-weight: bold;">340</div>
+                    <div style="font-size: 1rem; color: #ff00ff;">AI Sessions</div>
+                    <div style="font-size: 0.75rem; color: #888; margin-top: 0.25rem;">Preserved</div>
+                </div>
+                <div class="floating-stat" style="background: linear-gradient(135deg, rgba(0,255,136,0.2), rgba(0,0,0,0.3)); border: 2px solid #00ff88; border-radius: 15px; padding: 1.5rem; text-align: center; min-width: 140px;">
+                    <div style="font-size: 2.5rem; font-family: Orbitron; color: #00ff88; font-weight: bold;">168</div>
+                    <div style="font-size: 1rem; color: #00ff88;">x Faster</div>
+                    <div style="font-size: 0.75rem; color: #888; margin-top: 0.25rem;">Deployment</div>
+                </div>
+            </div>
         </div>
 
         <div class="challenge-section">
