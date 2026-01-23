@@ -886,7 +886,7 @@
         /* ========================================== */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin: 2rem 0;
         }
@@ -1464,7 +1464,8 @@
             }
 
             .lessons-grid,
-            .deepdive-grid {
+            .deepdive-grid,
+            .cards-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -1539,7 +1540,8 @@
             }
 
             .lessons-grid,
-            .deepdive-grid {
+            .deepdive-grid,
+            .cards-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1827,6 +1829,36 @@
                     <span class="card-tag">Claude</span>
                     <span class="card-tag">AI Pairing</span>
                     <span class="card-tag">100k Sessions</span>
+                </div>
+            </div>
+            <div class="card reveal stagger-7">
+                <div class="card-icon">MEM</div>
+                <h4>Session Persistence</h4>
+                <p>100,000+ AI sessions preserved with full context recovery, conversation threading, and cross-session learning.</p>
+                <div class="card-tags">
+                    <span class="card-tag">Context</span>
+                    <span class="card-tag">Memory</span>
+                    <span class="card-tag">History</span>
+                </div>
+            </div>
+            <div class="card reveal stagger-8">
+                <div class="card-icon">DATA</div>
+                <h4>Data Infrastructure</h4>
+                <p>Persistent storage architecture, automated backups, Timeshift snapshots, and GitLab offsite redundancy.</p>
+                <div class="card-tags">
+                    <span class="card-tag">Storage</span>
+                    <span class="card-tag">Backups</span>
+                    <span class="card-tag">Redundancy</span>
+                </div>
+            </div>
+            <div class="card reveal stagger-9">
+                <div class="card-icon">SEC</div>
+                <h4>Security Architecture</h4>
+                <p>Zero-trust security model, air-gapped operations, encrypted communications, and access control systems.</p>
+                <div class="card-tags">
+                    <span class="card-tag">Zero-Trust</span>
+                    <span class="card-tag">Encryption</span>
+                    <span class="card-tag">Access</span>
                 </div>
             </div>
         </div>
