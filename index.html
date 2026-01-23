@@ -1559,6 +1559,135 @@
         @keyframes blink {
             50% { border-color: transparent; }
         }
+
+        /* ========================================== */
+        /* MOBILE RESPONSIVE - Full Phone Support */
+        /* ========================================== */
+
+        @media (max-width: 768px) {
+            /* Big Graphics - Allow horizontal scroll so content is readable */
+            .big-graphic-section {
+                padding: 1rem 0.5rem;
+            }
+
+            .big-graphic-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding: 1rem;
+            }
+
+            .big-graphic-svg {
+                min-width: 800px; /* Force readable size, allow scroll */
+                height: auto;
+            }
+
+            .big-graphic-label {
+                font-size: 0.8rem;
+                padding: 0 0.5rem;
+            }
+
+            /* Hero Section */
+            .hero {
+                padding: 80px 1rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+            }
+
+            /* Section Headers */
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-header p {
+                font-size: 0.9rem;
+            }
+
+            /* Cards and Grids */
+            .skills-grid,
+            .capabilities-grid,
+            .methodology-grid,
+            .lessons-grid {
+                grid-template-columns: 1fr !important;
+                padding: 0 1rem !important;
+            }
+
+            /* Stats Cards */
+            .floating-stat {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            /* Experience Cards */
+            .experience-card {
+                padding: 1rem;
+            }
+
+            /* Skill Tags */
+            .skill-tag {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            /* Timeline */
+            .timeline-content h3 {
+                font-size: 1rem;
+            }
+
+            /* Tables */
+            .blog-table {
+                font-size: 0.8rem;
+            }
+
+            /* Contact Section */
+            .contact-section {
+                padding: 2rem 1rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 1rem;
+            }
+
+            .footer-text {
+                font-size: 0.8rem;
+            }
+
+            /* Hide decorative elements on mobile */
+            .floating-orbs,
+            .grid-background,
+            .scanlines {
+                display: none;
+            }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.2rem;
+            }
+
+            .big-graphic-svg {
+                min-width: 600px;
+            }
+
+            nav {
+                padding: 0.5rem 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
