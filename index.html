@@ -4098,1161 +4098,292 @@ deploy_infrastructure</code></pre>
     </section>
 
     <!-- ========================================== -->
-    <!-- EPIC AI GRAPHICS SECTION - 10 VISUALIZATIONS -->
+    <!-- AI DATACENTER GRAPHICS -->
     <!-- ========================================== -->
 
-    <!-- EPIC GRAPHIC 1: Neural Network Galaxy -->
+    <!-- LARGE GRAPHIC: Space-Themed AI Datacenter -->
     <section class="big-graphic-section">
         <div class="big-graphic-container">
-            <svg viewBox="0 0 1200 500" class="big-graphic-svg">
+            <svg viewBox="0 0 1400 700" class="big-graphic-svg">
                 <defs>
-                    <radialGradient id="galaxyCore" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1"/>
-                        <stop offset="50%" style="stop-color:#00f0ff;stop-opacity:0.5"/>
-                        <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
-                    </radialGradient>
-                    <filter id="galaxyGlow">
-                        <feGaussianBlur stdDeviation="8" result="blur"/>
+                    <linearGradient id="spaceFloor" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#0a0a1a"/>
+                        <stop offset="100%" style="stop-color:#1a1a2a"/>
+                    </linearGradient>
+                    <filter id="cabinetGlow">
+                        <feGaussianBlur stdDeviation="3" result="blur"/>
                         <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                     </filter>
                 </defs>
 
-                <text x="600" y="40" text-anchor="middle" fill="#00f0ff" font-family="Orbitron" font-size="24" filter="url(#galaxyGlow)">NEURAL NETWORK GALAXY</text>
-                <text x="600" y="65" text-anchor="middle" fill="#888" font-size="12">Deep Learning Architecture Visualization</text>
+                <!-- Background -->
+                <rect width="1400" height="700" fill="url(#spaceFloor)"/>
 
-                <!-- Galaxy Core -->
-                <circle cx="600" cy="280" r="120" fill="url(#galaxyCore)" filter="url(#galaxyGlow)">
-                    <animate attributeName="r" values="120;130;120" dur="3s" repeatCount="indefinite"/>
-                </circle>
-
-                <!-- Neural Nodes - Input Layer -->
-                <g class="input-layer">
-                    <circle cx="150" cy="150" r="20" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="2"><animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/></circle>
-                    <circle cx="150" cy="230" r="20" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="2"><animate attributeName="opacity" values="1;0.5;1" dur="2.3s" repeatCount="indefinite"/></circle>
-                    <circle cx="150" cy="310" r="20" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="2"><animate attributeName="opacity" values="1;0.5;1" dur="1.8s" repeatCount="indefinite"/></circle>
-                    <circle cx="150" cy="390" r="20" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="2"><animate attributeName="opacity" values="1;0.5;1" dur="2.5s" repeatCount="indefinite"/></circle>
-                    <text x="150" y="450" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="12">INPUT</text>
+                <!-- Stars in background -->
+                <g fill="#fff" opacity="0.4">
+                    <circle cx="50" cy="30" r="1"/><circle cx="150" cy="60" r="1.2"/><circle cx="280" cy="25" r="0.8"/>
+                    <circle cx="400" cy="50" r="1"/><circle cx="520" cy="35" r="1.3"/><circle cx="650" cy="55" r="0.9"/>
+                    <circle cx="780" cy="28" r="1.1"/><circle cx="900" cy="48" r="1"/><circle cx="1050" cy="32" r="1.2"/>
+                    <circle cx="1180" cy="58" r="0.8"/><circle cx="1300" cy="40" r="1"/><circle cx="1350" cy="65" r="0.7"/>
+                    <circle cx="100" cy="90" r="0.9"/><circle cx="350" cy="85" r="1"/><circle cx="600" cy="78" r="0.8"/>
+                    <circle cx="850" cy="92" r="1.1"/><circle cx="1100" cy="82" r="0.9"/><circle cx="1250" cy="95" r="1"/>
                 </g>
 
-                <!-- Hidden Layer 1 -->
-                <g class="hidden-1">
-                    <circle cx="350" cy="120" r="15" fill="rgba(0,240,255,0.3)" stroke="#00f0ff" stroke-width="2"/>
-                    <circle cx="350" cy="190" r="15" fill="rgba(0,240,255,0.3)" stroke="#00f0ff" stroke-width="2"/>
-                    <circle cx="350" cy="260" r="15" fill="rgba(0,240,255,0.3)" stroke="#00f0ff" stroke-width="2"/>
-                    <circle cx="350" cy="330" r="15" fill="rgba(0,240,255,0.3)" stroke="#00f0ff" stroke-width="2"/>
-                    <circle cx="350" cy="400" r="15" fill="rgba(0,240,255,0.3)" stroke="#00f0ff" stroke-width="2"/>
-                </g>
+                <text x="700" y="50" text-anchor="middle" fill="#00f0ff" font-family="Orbitron" font-size="28" filter="url(#cabinetGlow)">AI COMPUTE INFRASTRUCTURE</text>
+                <text x="700" y="80" text-anchor="middle" fill="#888" font-size="14">Cisco UCS + NVIDIA L40S GPUs | BTA AI POD</text>
 
-                <!-- Hidden Layer 2 (Galaxy Core) -->
-                <g class="hidden-2">
-                    <circle cx="600" cy="160" r="25" fill="rgba(255,0,255,0.4)" stroke="#ff00ff" stroke-width="2"><animate attributeName="r" values="25;30;25" dur="2s" repeatCount="indefinite"/></circle>
-                    <circle cx="530" cy="230" r="25" fill="rgba(255,0,255,0.4)" stroke="#ff00ff" stroke-width="2"><animate attributeName="r" values="25;28;25" dur="2.5s" repeatCount="indefinite"/></circle>
-                    <circle cx="670" cy="230" r="25" fill="rgba(255,0,255,0.4)" stroke="#ff00ff" stroke-width="2"><animate attributeName="r" values="25;32;25" dur="1.8s" repeatCount="indefinite"/></circle>
-                    <circle cx="530" cy="330" r="25" fill="rgba(255,0,255,0.4)" stroke="#ff00ff" stroke-width="2"><animate attributeName="r" values="25;27;25" dur="2.2s" repeatCount="indefinite"/></circle>
-                    <circle cx="670" cy="330" r="25" fill="rgba(255,0,255,0.4)" stroke="#ff00ff" stroke-width="2"><animate attributeName="r" values="25;29;25" dur="2.7s" repeatCount="indefinite"/></circle>
-                    <circle cx="600" cy="400" r="25" fill="rgba(255,0,255,0.4)" stroke="#ff00ff" stroke-width="2"><animate attributeName="r" values="25;31;25" dur="1.9s" repeatCount="indefinite"/></circle>
-                </g>
-
-                <!-- Hidden Layer 3 -->
-                <g class="hidden-3">
-                    <circle cx="850" cy="120" r="15" fill="rgba(234,179,8,0.3)" stroke="#eab308" stroke-width="2"/>
-                    <circle cx="850" cy="190" r="15" fill="rgba(234,179,8,0.3)" stroke="#eab308" stroke-width="2"/>
-                    <circle cx="850" cy="260" r="15" fill="rgba(234,179,8,0.3)" stroke="#eab308" stroke-width="2"/>
-                    <circle cx="850" cy="330" r="15" fill="rgba(234,179,8,0.3)" stroke="#eab308" stroke-width="2"/>
-                    <circle cx="850" cy="400" r="15" fill="rgba(234,179,8,0.3)" stroke="#eab308" stroke-width="2"/>
-                </g>
-
-                <!-- Output Layer -->
-                <g class="output-layer">
-                    <circle cx="1050" cy="200" r="25" fill="rgba(0,255,136,0.4)" stroke="#00ff88" stroke-width="3"><animate attributeName="opacity" values="1;0.6;1" dur="1.5s" repeatCount="indefinite"/></circle>
-                    <circle cx="1050" cy="280" r="25" fill="rgba(0,255,136,0.4)" stroke="#00ff88" stroke-width="3"><animate attributeName="opacity" values="1;0.6;1" dur="1.7s" repeatCount="indefinite"/></circle>
-                    <circle cx="1050" cy="360" r="25" fill="rgba(0,255,136,0.4)" stroke="#00ff88" stroke-width="3"><animate attributeName="opacity" values="1;0.6;1" dur="1.4s" repeatCount="indefinite"/></circle>
-                    <text x="1050" y="450" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="12">OUTPUT</text>
-                </g>
-
-                <!-- Connections (simplified) -->
-                <g stroke="#00f0ff" stroke-width="1" opacity="0.3">
-                    <line x1="170" y1="150" x2="335" y2="120"/><line x1="170" y1="150" x2="335" y2="190"/>
-                    <line x1="170" y1="230" x2="335" y2="190"/><line x1="170" y1="230" x2="335" y2="260"/>
-                    <line x1="170" y1="310" x2="335" y2="260"/><line x1="170" y1="310" x2="335" y2="330"/>
-                    <line x1="170" y1="390" x2="335" y2="330"/><line x1="170" y1="390" x2="335" y2="400"/>
-                </g>
-
-                <!-- Data Flow Particles -->
-                <circle r="4" fill="#00ff88">
-                    <animateMotion dur="3s" repeatCount="indefinite" path="M150,150 Q400,200 600,280 T1050,280"/>
-                </circle>
-                <circle r="4" fill="#ff00ff">
-                    <animateMotion dur="4s" repeatCount="indefinite" path="M150,310 Q400,300 600,280 T1050,360"/>
-                </circle>
-                <circle r="4" fill="#00f0ff">
-                    <animateMotion dur="3.5s" repeatCount="indefinite" path="M150,230 Q400,250 600,280 T1050,200"/>
-                </circle>
-
-                <!-- Stats -->
-                <g transform="translate(100, 480)">
-                    <text x="0" y="0" fill="#888" font-size="11">Layers: <tspan fill="#00f0ff">5</tspan></text>
-                    <text x="150" y="0" fill="#888" font-size="11">Parameters: <tspan fill="#ff00ff">70B</tspan></text>
-                    <text x="350" y="0" fill="#888" font-size="11">Attention Heads: <tspan fill="#00ff88">64</tspan></text>
-                    <text x="550" y="0" fill="#888" font-size="11">Context Window: <tspan fill="#eab308">128K</tspan></text>
-                </g>
-            </svg>
-        </div>
-        <p class="big-graphic-label">Deep neural networks powering intelligent inference</p>
-    </section>
-
-    <!-- EPIC GRAPHIC 2: AI Command Center in Space -->
-    <section class="big-graphic-section">
-        <div class="big-graphic-container">
-            <svg viewBox="0 0 1200 500" class="big-graphic-svg">
-                <defs>
-                    <linearGradient id="spaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#0a0a1a"/>
-                        <stop offset="100%" style="stop-color:#1a0a2a"/>
-                    </linearGradient>
-                    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#fff;stop-opacity:1"/>
-                        <stop offset="100%" style="stop-color:#fff;stop-opacity:0"/>
-                    </radialGradient>
-                </defs>
-
-                <!-- Space Background -->
-                <rect width="1200" height="500" fill="url(#spaceGrad)"/>
-
-                <!-- Stars -->
-                <g fill="#fff" opacity="0.8">
-                    <circle cx="100" cy="50" r="1"/><circle cx="200" cy="80" r="1.5"/><circle cx="350" cy="30" r="1"/>
-                    <circle cx="450" cy="90" r="1.2"/><circle cx="550" cy="40" r="1"/><circle cx="700" cy="70" r="1.5"/>
-                    <circle cx="850" cy="25" r="1"/><circle cx="950" cy="60" r="1.2"/><circle cx="1100" cy="45" r="1"/>
-                    <circle cx="150" cy="120" r="0.8"/><circle cx="280" cy="140" r="1"/><circle cx="420" cy="110" r="1.3"/>
-                    <circle cx="580" cy="130" r="0.9"/><circle cx="720" cy="100" r="1.1"/><circle cx="880" cy="125" r="1"/>
-                    <circle cx="1020" cy="95" r="1.4"/><circle cx="1150" cy="115" r="0.7"/>
-                </g>
-
-                <text x="600" y="45" text-anchor="middle" fill="#00f0ff" font-family="Orbitron" font-size="22">ORBITAL AI COMMAND CENTER</text>
-
-                <!-- Space Station Main Body -->
-                <g transform="translate(400, 180)">
-                    <rect x="0" y="50" width="400" height="150" rx="20" fill="rgba(20,20,40,0.9)" stroke="#00f0ff" stroke-width="2"/>
-                    <rect x="20" y="70" width="360" height="110" rx="10" fill="rgba(0,0,0,0.5)" stroke="#00f0ff" stroke-width="1"/>
-
-                    <!-- Control Screens -->
-                    <rect x="30" y="80" width="80" height="60" rx="5" fill="rgba(0,255,136,0.2)" stroke="#00ff88"/>
-                    <rect x="120" y="80" width="80" height="60" rx="5" fill="rgba(255,0,255,0.2)" stroke="#ff00ff"/>
-                    <rect x="210" y="80" width="80" height="60" rx="5" fill="rgba(0,240,255,0.2)" stroke="#00f0ff"/>
-                    <rect x="300" y="80" width="60" height="60" rx="5" fill="rgba(234,179,8,0.2)" stroke="#eab308"/>
-
-                    <!-- Screen Labels -->
-                    <text x="70" y="115" text-anchor="middle" fill="#00ff88" font-size="8">GPU STATUS</text>
-                    <text x="160" y="115" text-anchor="middle" fill="#ff00ff" font-size="8">INFERENCE</text>
-                    <text x="250" y="115" text-anchor="middle" fill="#00f0ff" font-size="8">NETWORK</text>
-                    <text x="330" y="115" text-anchor="middle" fill="#eab308" font-size="8">ALERTS</text>
-
-                    <!-- Activity Indicators -->
-                    <circle cx="70" cy="130" r="4" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/></circle>
-                    <circle cx="160" cy="130" r="4" fill="#ff00ff"><animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite"/></circle>
-                    <circle cx="250" cy="130" r="4" fill="#00f0ff"><animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/></circle>
-
-                    <!-- Station Label -->
-                    <text x="200" y="170" text-anchor="middle" fill="#00f0ff" font-family="Orbitron" font-size="14">STATION ALPHA-7</text>
-                </g>
-
-                <!-- Solar Panels Left -->
-                <g transform="translate(200, 220)">
-                    <rect x="0" y="0" width="180" height="60" fill="rgba(0,100,200,0.3)" stroke="#00f0ff" stroke-width="1"/>
-                    <line x1="0" y1="20" x2="180" y2="20" stroke="#00f0ff" stroke-width="0.5"/>
-                    <line x1="0" y1="40" x2="180" y2="40" stroke="#00f0ff" stroke-width="0.5"/>
-                    <line x1="45" y1="0" x2="45" y2="60" stroke="#00f0ff" stroke-width="0.5"/>
-                    <line x1="90" y1="0" x2="90" y2="60" stroke="#00f0ff" stroke-width="0.5"/>
-                    <line x1="135" y1="0" x2="135" y2="60" stroke="#00f0ff" stroke-width="0.5"/>
-                </g>
-
-                <!-- Solar Panels Right -->
-                <g transform="translate(820, 220)">
-                    <rect x="0" y="0" width="180" height="60" fill="rgba(0,100,200,0.3)" stroke="#00f0ff" stroke-width="1"/>
-                    <line x1="0" y1="20" x2="180" y2="20" stroke="#00f0ff" stroke-width="0.5"/>
-                    <line x1="0" y1="40" x2="180" y2="40" stroke="#00f0ff" stroke-width="0.5"/>
-                    <line x1="45" y1="0" x2="45" y2="60" stroke="#00f0ff" stroke-width="0.5"/>
-                    <line x1="90" y1="0" x2="90" y2="60" stroke="#00f0ff" stroke-width="0.5"/>
-                    <line x1="135" y1="0" x2="135" y2="60" stroke="#00f0ff" stroke-width="0.5"/>
-                </g>
-
-                <!-- Earth Below -->
-                <ellipse cx="600" cy="600" rx="400" ry="150" fill="rgba(30,100,200,0.3)" stroke="#00f0ff" stroke-width="1"/>
-                <ellipse cx="600" cy="600" rx="380" ry="140" fill="none" stroke="rgba(0,255,136,0.3)" stroke-width="1" stroke-dasharray="10,5"/>
-
-                <!-- Satellites -->
-                <g transform="translate(150, 350)">
-                    <rect x="0" y="0" width="40" height="25" rx="5" fill="rgba(100,100,100,0.8)" stroke="#888"/>
-                    <rect x="-20" y="8" width="20" height="8" fill="rgba(0,100,200,0.5)" stroke="#00f0ff"/>
-                    <rect x="40" y="8" width="20" height="8" fill="rgba(0,100,200,0.5)" stroke="#00f0ff"/>
-                    <circle cx="20" cy="12" r="3" fill="#00ff88"><animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/></circle>
-                </g>
-
-                <g transform="translate(1000, 320)">
-                    <rect x="0" y="0" width="40" height="25" rx="5" fill="rgba(100,100,100,0.8)" stroke="#888"/>
-                    <rect x="-20" y="8" width="20" height="8" fill="rgba(0,100,200,0.5)" stroke="#00f0ff"/>
-                    <rect x="40" y="8" width="20" height="8" fill="rgba(0,100,200,0.5)" stroke="#00f0ff"/>
-                    <circle cx="20" cy="12" r="3" fill="#ff00ff"><animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/></circle>
-                </g>
-
-                <!-- Communication Beams -->
-                <line x1="190" y1="362" x2="400" y2="280" stroke="#00ff88" stroke-width="1" stroke-dasharray="5,5" opacity="0.5">
-                    <animate attributeName="stroke-dashoffset" from="10" to="0" dur="0.5s" repeatCount="indefinite"/>
-                </line>
-                <line x1="1020" y1="332" x2="800" y2="280" stroke="#ff00ff" stroke-width="1" stroke-dasharray="5,5" opacity="0.5">
-                    <animate attributeName="stroke-dashoffset" from="10" to="0" dur="0.5s" repeatCount="indefinite"/>
-                </line>
-
-                <!-- Mission Stats -->
-                <g transform="translate(50, 460)">
-                    <text x="0" y="0" fill="#00f0ff" font-family="Orbitron" font-size="11">MISSION STATUS: <tspan fill="#00ff88">OPERATIONAL</tspan></text>
-                    <text x="300" y="0" fill="#888" font-size="10">Uptime: <tspan fill="#00ff88">847 days</tspan></text>
-                    <text x="500" y="0" fill="#888" font-size="10">Inference Requests: <tspan fill="#ff00ff">2.4M</tspan></text>
-                    <text x="750" y="0" fill="#888" font-size="10">Latency: <tspan fill="#00f0ff">45ms</tspan></text>
-                    <text x="950" y="0" fill="#888" font-size="10">Reliability: <tspan fill="#00ff88">99.99%</tspan></text>
-                </g>
-            </svg>
-        </div>
-        <p class="big-graphic-label">Mission-critical AI infrastructure with orbital reliability</p>
-    </section>
-
-    <!-- EPIC GRAPHIC 3: Quantum AI Core -->
-    <section class="big-graphic-section">
-        <div class="big-graphic-container">
-            <svg viewBox="0 0 1200 450" class="big-graphic-svg">
-                <defs>
-                    <radialGradient id="quantumCore" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#00f0ff;stop-opacity:0.8"/>
-                        <stop offset="40%" style="stop-color:#ff00ff;stop-opacity:0.4"/>
-                        <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
-                    </radialGradient>
-                </defs>
-
-                <text x="600" y="40" text-anchor="middle" fill="#ff00ff" font-family="Orbitron" font-size="22">QUANTUM-CLASSICAL HYBRID CORE</text>
-
-                <!-- Central Quantum Core -->
-                <circle cx="600" cy="250" r="100" fill="url(#quantumCore)">
-                    <animate attributeName="r" values="100;110;100" dur="2s" repeatCount="indefinite"/>
-                </circle>
-
-                <!-- Orbiting Qubits -->
-                <g>
-                    <circle cx="600" cy="250" r="140" fill="none" stroke="rgba(0,240,255,0.3)" stroke-width="1"/>
-                    <circle r="10" fill="#00f0ff">
-                        <animateMotion dur="4s" repeatCount="indefinite" path="M600,110 A140,140 0 1,1 599,110"/>
-                    </circle>
-                    <circle r="10" fill="#ff00ff">
-                        <animateMotion dur="4s" repeatCount="indefinite" path="M740,250 A140,140 0 1,1 739,250"/>
-                    </circle>
-                    <circle r="10" fill="#00ff88">
-                        <animateMotion dur="4s" repeatCount="indefinite" path="M600,390 A140,140 0 1,1 599,390"/>
-                    </circle>
-                </g>
-
-                <!-- Outer Orbit -->
-                <g>
-                    <ellipse cx="600" cy="250" rx="200" ry="120" fill="none" stroke="rgba(255,0,255,0.2)" stroke-width="1"/>
-                    <circle r="8" fill="#eab308">
-                        <animateMotion dur="6s" repeatCount="indefinite" path="M800,250 A200,120 0 1,1 799,250"/>
-                    </circle>
-                </g>
-
-                <!-- Classical Processors Left -->
-                <g transform="translate(100, 150)">
-                    <rect width="150" height="200" rx="10" fill="rgba(0,0,0,0.5)" stroke="#76b900" stroke-width="2"/>
-                    <text x="75" y="30" text-anchor="middle" fill="#76b900" font-family="Orbitron" font-size="12">CLASSICAL</text>
-                    <text x="75" y="50" text-anchor="middle" fill="#76b900" font-family="Orbitron" font-size="12">PROCESSOR</text>
-
-                    <!-- Chip Grid -->
-                    <g transform="translate(20, 70)">
-                        <rect x="0" y="0" width="25" height="25" fill="rgba(118,185,0,0.3)" stroke="#76b900"/>
-                        <rect x="30" y="0" width="25" height="25" fill="rgba(118,185,0,0.3)" stroke="#76b900"/>
-                        <rect x="60" y="0" width="25" height="25" fill="rgba(118,185,0,0.3)" stroke="#76b900"/>
-                        <rect x="90" y="0" width="25" height="25" fill="rgba(118,185,0,0.3)" stroke="#76b900"/>
-                        <rect x="0" y="30" width="25" height="25" fill="rgba(118,185,0,0.3)" stroke="#76b900"/>
-                        <rect x="30" y="30" width="25" height="25" fill="rgba(118,185,0,0.3)" stroke="#76b900"/>
-                        <rect x="60" y="30" width="25" height="25" fill="rgba(118,185,0,0.3)" stroke="#76b900"/>
-                        <rect x="90" y="30" width="25" height="25" fill="rgba(118,185,0,0.3)" stroke="#76b900"/>
-                    </g>
-
-                    <text x="75" y="160" text-anchor="middle" fill="#888" font-size="10">GPU Tensor Cores</text>
-                    <text x="75" y="180" text-anchor="middle" fill="#76b900" font-size="14">1,136 cores</text>
-                </g>
-
-                <!-- Classical Processors Right -->
-                <g transform="translate(950, 150)">
-                    <rect width="150" height="200" rx="10" fill="rgba(0,0,0,0.5)" stroke="#76b900" stroke-width="2"/>
-                    <text x="75" y="30" text-anchor="middle" fill="#76b900" font-family="Orbitron" font-size="12">MEMORY</text>
-                    <text x="75" y="50" text-anchor="middle" fill="#76b900" font-family="Orbitron" font-size="12">CONTROLLER</text>
-
-                    <!-- Memory Bars -->
-                    <g transform="translate(20, 70)">
-                        <rect x="0" y="0" width="110" height="15" rx="2" fill="rgba(0,0,0,0.5)" stroke="#76b900"/>
-                        <rect x="2" y="2" width="95" height="11" rx="1" fill="#76b900"><animate attributeName="width" values="95;100;95" dur="2s" repeatCount="indefinite"/></rect>
-                        <rect x="0" y="25" width="110" height="15" rx="2" fill="rgba(0,0,0,0.5)" stroke="#76b900"/>
-                        <rect x="2" y="27" width="80" height="11" rx="1" fill="#76b900"><animate attributeName="width" values="80;90;80" dur="2.5s" repeatCount="indefinite"/></rect>
-                    </g>
-
-                    <text x="75" y="160" text-anchor="middle" fill="#888" font-size="10">VRAM Allocated</text>
-                    <text x="75" y="180" text-anchor="middle" fill="#76b900" font-size="14">184 GB</text>
-                </g>
-
-                <!-- Connection Lines -->
-                <line x1="250" y1="250" x2="460" y2="250" stroke="#00f0ff" stroke-width="2" stroke-dasharray="10,5">
-                    <animate attributeName="stroke-dashoffset" from="15" to="0" dur="1s" repeatCount="indefinite"/>
-                </line>
-                <line x1="740" y1="250" x2="950" y2="250" stroke="#00f0ff" stroke-width="2" stroke-dasharray="10,5">
-                    <animate attributeName="stroke-dashoffset" from="15" to="0" dur="1s" repeatCount="indefinite"/>
-                </line>
-
-                <!-- Core Stats -->
-                <text x="600" y="245" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="16">HYBRID</text>
-                <text x="600" y="265" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="16">CORE</text>
-
-                <!-- Bottom Stats -->
-                <g transform="translate(300, 420)">
-                    <text x="0" y="0" fill="#888" font-size="11">Entanglement: <tspan fill="#ff00ff">STABLE</tspan></text>
-                    <text x="200" y="0" fill="#888" font-size="11">Coherence: <tspan fill="#00f0ff">99.7%</tspan></text>
-                    <text x="400" y="0" fill="#888" font-size="11">Error Rate: <tspan fill="#00ff88">0.001%</tspan></text>
-                </g>
-            </svg>
-        </div>
-        <p class="big-graphic-label">Next-generation hybrid computing architecture</p>
-    </section>
-
-    <!-- EPIC GRAPHIC 4: Datacenter Rack Array -->
-    <section class="big-graphic-section">
-        <div class="big-graphic-container">
-            <svg viewBox="0 0 1200 450" class="big-graphic-svg">
-                <text x="600" y="40" text-anchor="middle" fill="#76b900" font-family="Orbitron" font-size="22">ENTERPRISE GPU DATACENTER</text>
-
-                <!-- Floor Grid -->
+                <!-- Floor Grid Lines -->
                 <g stroke="rgba(0,240,255,0.1)" stroke-width="1">
-                    <line x1="100" y1="400" x2="1100" y2="400"/>
-                    <line x1="150" y1="420" x2="1050" y2="420"/>
+                    <line x1="0" y1="650" x2="1400" y2="650"/>
+                    <line x1="100" y1="680" x2="1300" y2="680"/>
                 </g>
 
-                <!-- Rack 1 -->
-                <g transform="translate(100, 80)">
-                    <rect width="120" height="300" rx="5" fill="rgba(30,30,40,0.9)" stroke="#444" stroke-width="2"/>
-                    <rect x="10" y="10" width="100" height="40" rx="3" fill="rgba(118,185,0,0.2)" stroke="#76b900"/>
-                    <rect x="10" y="60" width="100" height="40" rx="3" fill="rgba(118,185,0,0.2)" stroke="#76b900"/>
-                    <rect x="10" y="110" width="100" height="40" rx="3" fill="rgba(118,185,0,0.2)" stroke="#76b900"/>
-                    <rect x="10" y="160" width="100" height="40" rx="3" fill="rgba(0,240,255,0.2)" stroke="#00f0ff"/>
-                    <rect x="10" y="210" width="100" height="40" rx="3" fill="rgba(0,240,255,0.2)" stroke="#00f0ff"/>
-                    <rect x="10" y="260" width="100" height="30" rx="3" fill="rgba(50,50,60,0.5)" stroke="#666"/>
-                    <circle cx="100" cy="25" r="4" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite"/></circle>
-                    <circle cx="100" cy="75" r="4" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/></circle>
-                    <circle cx="100" cy="125" r="4" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.9s" repeatCount="indefinite"/></circle>
-                    <text x="60" y="320" text-anchor="middle" fill="#888" font-size="10">RACK-01</text>
+                <!-- CABINET ROW 1 - Primary GPU Servers -->
+                <!-- Cabinet 1 -->
+                <g transform="translate(100, 120)">
+                    <rect width="180" height="480" rx="8" fill="rgba(20,20,35,0.95)" stroke="#00f0ff" stroke-width="2"/>
+                    <rect x="10" y="10" width="160" height="30" fill="rgba(0,240,255,0.1)"/>
+                    <text x="90" y="30" text-anchor="middle" fill="#00f0ff" font-family="Orbitron" font-size="11">GPU SERVER 1</text>
+
+                    <!-- GPU Slots -->
+                    <rect x="15" y="50" width="150" height="55" rx="3" fill="rgba(118,185,0,0.2)" stroke="#76b900" stroke-width="2"/>
+                    <text x="90" y="70" text-anchor="middle" fill="#76b900" font-size="10">NVIDIA L40S</text>
+                    <text x="90" y="90" text-anchor="middle" fill="#00ff88" font-size="9">92GB VRAM</text>
+                    <circle cx="155" cy="65" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite"/></circle>
+
+                    <rect x="15" y="115" width="150" height="55" rx="3" fill="rgba(118,185,0,0.2)" stroke="#76b900" stroke-width="2"/>
+                    <text x="90" y="135" text-anchor="middle" fill="#76b900" font-size="10">NVIDIA L40S</text>
+                    <text x="90" y="155" text-anchor="middle" fill="#00ff88" font-size="9">92GB VRAM</text>
+                    <circle cx="155" cy="130" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/></circle>
+
+                    <!-- CPU/Memory -->
+                    <rect x="15" y="180" width="150" height="40" rx="3" fill="rgba(0,240,255,0.1)" stroke="#00f0ff"/>
+                    <text x="90" y="205" text-anchor="middle" fill="#00f0ff" font-size="9">512GB DDR5 RAM</text>
+
+                    <!-- NVLink -->
+                    <rect x="15" y="230" width="150" height="30" rx="3" fill="rgba(255,0,255,0.1)" stroke="#ff00ff"/>
+                    <text x="90" y="250" text-anchor="middle" fill="#ff00ff" font-size="9">NVLink Bridge</text>
+
+                    <!-- Storage -->
+                    <rect x="15" y="270" width="150" height="40" rx="3" fill="rgba(234,179,8,0.1)" stroke="#eab308"/>
+                    <text x="90" y="295" text-anchor="middle" fill="#eab308" font-size="9">3TB NVMe Storage</text>
+
+                    <!-- Network -->
+                    <rect x="15" y="320" width="150" height="35" rx="3" fill="rgba(168,85,247,0.1)" stroke="#a855f7"/>
+                    <text x="90" y="342" text-anchor="middle" fill="#a855f7" font-size="9">100GbE Network</text>
+
+                    <!-- Power -->
+                    <rect x="15" y="365" width="150" height="30" rx="3" fill="rgba(255,102,0,0.1)" stroke="#ff6600"/>
+                    <text x="90" y="385" text-anchor="middle" fill="#ff6600" font-size="9">2x 1600W PSU</text>
+
+                    <!-- Status Bar -->
+                    <rect x="15" y="410" width="150" height="55" rx="3" fill="rgba(0,0,0,0.5)"/>
+                    <text x="90" y="430" text-anchor="middle" fill="#888" font-size="9">STATUS</text>
+                    <text x="90" y="450" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="12">ONLINE</text>
                 </g>
 
-                <!-- Rack 2 -->
-                <g transform="translate(250, 80)">
-                    <rect width="120" height="300" rx="5" fill="rgba(30,30,40,0.9)" stroke="#444" stroke-width="2"/>
-                    <rect x="10" y="10" width="100" height="40" rx="3" fill="rgba(118,185,0,0.2)" stroke="#76b900"/>
-                    <rect x="10" y="60" width="100" height="40" rx="3" fill="rgba(118,185,0,0.2)" stroke="#76b900"/>
-                    <rect x="10" y="110" width="100" height="40" rx="3" fill="rgba(118,185,0,0.2)" stroke="#76b900"/>
-                    <rect x="10" y="160" width="100" height="40" rx="3" fill="rgba(118,185,0,0.2)" stroke="#76b900"/>
-                    <rect x="10" y="210" width="100" height="40" rx="3" fill="rgba(255,0,255,0.2)" stroke="#ff00ff"/>
-                    <rect x="10" y="260" width="100" height="30" rx="3" fill="rgba(50,50,60,0.5)" stroke="#666"/>
-                    <circle cx="100" cy="25" r="4" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1.1s" repeatCount="indefinite"/></circle>
-                    <circle cx="100" cy="75" r="4" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.7s" repeatCount="indefinite"/></circle>
-                    <circle cx="100" cy="125" r="4" fill="#eab308"/>
-                    <circle cx="100" cy="175" r="4" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.85s" repeatCount="indefinite"/></circle>
-                    <text x="60" y="320" text-anchor="middle" fill="#888" font-size="10">RACK-02</text>
+                <!-- Cabinet 2 - Kubernetes Control -->
+                <g transform="translate(320, 120)">
+                    <rect width="180" height="480" rx="8" fill="rgba(20,20,35,0.95)" stroke="#00f0ff" stroke-width="2"/>
+                    <rect x="10" y="10" width="160" height="30" fill="rgba(0,240,255,0.1)"/>
+                    <text x="90" y="30" text-anchor="middle" fill="#00f0ff" font-family="Orbitron" font-size="11">K8S CONTROL</text>
+
+                    <rect x="15" y="50" width="150" height="70" rx="3" fill="rgba(0,240,255,0.15)" stroke="#00f0ff"/>
+                    <text x="90" y="75" text-anchor="middle" fill="#00f0ff" font-size="10">k3s Master</text>
+                    <text x="90" y="95" text-anchor="middle" fill="#888" font-size="8">API Server | etcd</text>
+                    <circle cx="155" cy="65" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/></circle>
+
+                    <rect x="15" y="130" width="150" height="50" rx="3" fill="rgba(255,0,255,0.1)" stroke="#ff00ff"/>
+                    <text x="90" y="155" text-anchor="middle" fill="#ff00ff" font-size="10">Cilium CNI</text>
+                    <text x="90" y="170" text-anchor="middle" fill="#888" font-size="8">eBPF Networking</text>
+
+                    <rect x="15" y="190" width="150" height="50" rx="3" fill="rgba(234,179,8,0.1)" stroke="#eab308"/>
+                    <text x="90" y="215" text-anchor="middle" fill="#eab308" font-size="10">MetalLB</text>
+                    <text x="90" y="230" text-anchor="middle" fill="#888" font-size="8">LoadBalancer IPs</text>
+
+                    <rect x="15" y="250" width="150" height="50" rx="3" fill="rgba(118,185,0,0.1)" stroke="#76b900"/>
+                    <text x="90" y="275" text-anchor="middle" fill="#76b900" font-size="10">GPU Operator</text>
+                    <text x="90" y="290" text-anchor="middle" fill="#888" font-size="8">Device Plugin</text>
+
+                    <rect x="15" y="310" width="150" height="50" rx="3" fill="rgba(168,85,247,0.1)" stroke="#a855f7"/>
+                    <text x="90" y="335" text-anchor="middle" fill="#a855f7" font-size="10">NFS CSI</text>
+                    <text x="90" y="350" text-anchor="middle" fill="#888" font-size="8">Persistent Storage</text>
+
+                    <rect x="15" y="375" width="150" height="90" rx="3" fill="rgba(0,0,0,0.3)"/>
+                    <text x="90" y="400" text-anchor="middle" fill="#888" font-size="9">CLUSTER STATUS</text>
+                    <text x="50" y="420" fill="#00ff88" font-size="8">● Nodes: 1</text>
+                    <text x="50" y="435" fill="#00ff88" font-size="8">● Pods: 12</text>
+                    <text x="50" y="450" fill="#00ff88" font-size="8">● Services: 8</text>
                 </g>
 
-                <!-- Rack 3 (Main GPU Rack) -->
-                <g transform="translate(400, 60)">
-                    <rect width="160" height="340" rx="5" fill="rgba(30,30,40,0.9)" stroke="#76b900" stroke-width="3"/>
-                    <text x="80" y="25" text-anchor="middle" fill="#76b900" font-family="Orbitron" font-size="11">PRIMARY GPU</text>
-                    <rect x="10" y="40" width="140" height="60" rx="3" fill="rgba(118,185,0,0.3)" stroke="#76b900" stroke-width="2"/>
-                    <text x="80" y="65" text-anchor="middle" fill="#76b900" font-size="10">NVIDIA L40S #1</text>
-                    <text x="80" y="85" text-anchor="middle" fill="#00ff88" font-size="9">92GB VRAM</text>
-                    <rect x="10" y="110" width="140" height="60" rx="3" fill="rgba(118,185,0,0.3)" stroke="#76b900" stroke-width="2"/>
-                    <text x="80" y="135" text-anchor="middle" fill="#76b900" font-size="10">NVIDIA L40S #2</text>
-                    <text x="80" y="155" text-anchor="middle" fill="#00ff88" font-size="9">92GB VRAM</text>
-                    <rect x="10" y="180" width="140" height="50" rx="3" fill="rgba(0,240,255,0.2)" stroke="#00f0ff"/>
-                    <text x="80" y="210" text-anchor="middle" fill="#00f0ff" font-size="9">NVLink Bridge</text>
-                    <rect x="10" y="240" width="140" height="50" rx="3" fill="rgba(255,0,255,0.2)" stroke="#ff00ff"/>
-                    <text x="80" y="270" text-anchor="middle" fill="#ff00ff" font-size="9">PCIe 5.0 Switch</text>
-                    <rect x="10" y="300" width="140" height="30" rx="3" fill="rgba(50,50,60,0.5)" stroke="#666"/>
-                    <circle cx="140" cy="55" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.5s" repeatCount="indefinite"/></circle>
-                    <circle cx="140" cy="125" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0.3;1" dur="0.6s" repeatCount="indefinite"/></circle>
+                <!-- Cabinet 3 - vLLM Inference -->
+                <g transform="translate(540, 120)">
+                    <rect width="220" height="480" rx="8" fill="rgba(20,20,35,0.95)" stroke="#ff00ff" stroke-width="3"/>
+                    <rect x="10" y="10" width="200" height="35" fill="rgba(255,0,255,0.15)"/>
+                    <text x="110" y="33" text-anchor="middle" fill="#ff00ff" font-family="Orbitron" font-size="13">vLLM INFERENCE</text>
+
+                    <!-- Model Display -->
+                    <rect x="15" y="55" width="190" height="100" rx="5" fill="rgba(0,0,0,0.5)" stroke="#ff00ff"/>
+                    <text x="110" y="80" text-anchor="middle" fill="#ff00ff" font-size="11">ACTIVE MODEL</text>
+                    <text x="110" y="105" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="14">Llama 3.3 70B</text>
+                    <text x="110" y="125" text-anchor="middle" fill="#888" font-size="9">35GB VRAM | Q4_K_M</text>
+                    <text x="110" y="145" text-anchor="middle" fill="#00ff88" font-size="10">▶ Ready for Inference</text>
+
+                    <!-- Available Models -->
+                    <rect x="15" y="165" width="190" height="140" rx="5" fill="rgba(0,0,0,0.3)"/>
+                    <text x="110" y="185" text-anchor="middle" fill="#888" font-size="10">9 MODELS AVAILABLE</text>
+                    <text x="30" y="205" fill="#00ff88" font-size="8">● Llama 3.2 3B</text>
+                    <text x="120" y="205" fill="#00ff88" font-size="8">● Llama 3 8B</text>
+                    <text x="30" y="220" fill="#eab308" font-size="8">● Mistral 24B</text>
+                    <text x="120" y="220" fill="#eab308" font-size="8">● DeepSeek 33B</text>
+                    <text x="30" y="235" fill="#eab308" font-size="8">● Qwen3 32B</text>
+                    <text x="120" y="235" fill="#eab308" font-size="8">● DeepSeek R1</text>
+                    <text x="30" y="250" fill="#ff6b6b" font-size="8">● Llama 70B</text>
+                    <text x="120" y="250" fill="#ff6b6b" font-size="8">● Qwen 72B</text>
+                    <text x="30" y="265" fill="#ff6b6b" font-size="8">● QwQ 32B</text>
+                    <text x="110" y="295" text-anchor="middle" fill="#888" font-size="8">~30 sec swap time</text>
+
+                    <!-- Performance -->
+                    <rect x="15" y="315" width="190" height="80" rx="5" fill="rgba(0,0,0,0.3)"/>
+                    <text x="110" y="335" text-anchor="middle" fill="#888" font-size="10">PERFORMANCE</text>
+                    <text x="30" y="355" fill="#00f0ff" font-size="9">Tokens/sec:</text>
+                    <text x="150" y="355" fill="#00f0ff" font-family="Orbitron" font-size="11">18</text>
+                    <text x="30" y="375" fill="#00ff88" font-size="9">TTFT:</text>
+                    <text x="150" y="375" fill="#00ff88" font-family="Orbitron" font-size="11">45ms</text>
+
+                    <!-- Status -->
+                    <rect x="15" y="410" width="190" height="55" rx="5" fill="rgba(0,255,136,0.1)" stroke="#00ff88"/>
+                    <text x="110" y="435" text-anchor="middle" fill="#888" font-size="9">INFERENCE STATUS</text>
+                    <circle cx="110" cy="450" r="8" fill="#00ff88"><animate attributeName="opacity" values="1;0.5;1" dur="0.5s" repeatCount="indefinite"/></circle>
                 </g>
 
-                <!-- Rack 4 -->
-                <g transform="translate(590, 80)">
-                    <rect width="120" height="300" rx="5" fill="rgba(30,30,40,0.9)" stroke="#444" stroke-width="2"/>
-                    <rect x="10" y="10" width="100" height="40" rx="3" fill="rgba(0,240,255,0.2)" stroke="#00f0ff"/>
-                    <rect x="10" y="60" width="100" height="40" rx="3" fill="rgba(0,240,255,0.2)" stroke="#00f0ff"/>
-                    <rect x="10" y="110" width="100" height="40" rx="3" fill="rgba(0,240,255,0.2)" stroke="#00f0ff"/>
-                    <rect x="10" y="160" width="100" height="40" rx="3" fill="rgba(168,85,247,0.2)" stroke="#a855f7"/>
-                    <rect x="10" y="210" width="100" height="40" rx="3" fill="rgba(168,85,247,0.2)" stroke="#a855f7"/>
-                    <rect x="10" y="260" width="100" height="30" rx="3" fill="rgba(50,50,60,0.5)" stroke="#666"/>
-                    <text x="60" y="320" text-anchor="middle" fill="#888" font-size="10">NETWORK</text>
+                <!-- Cabinet 4 - Observability -->
+                <g transform="translate(800, 120)">
+                    <rect width="180" height="480" rx="8" fill="rgba(20,20,35,0.95)" stroke="#a855f7" stroke-width="2"/>
+                    <rect x="10" y="10" width="160" height="30" fill="rgba(168,85,247,0.1)"/>
+                    <text x="90" y="30" text-anchor="middle" fill="#a855f7" font-family="Orbitron" font-size="11">OBSERVABILITY</text>
+
+                    <rect x="15" y="50" width="150" height="60" rx="3" fill="rgba(168,85,247,0.1)" stroke="#a855f7"/>
+                    <text x="90" y="75" text-anchor="middle" fill="#a855f7" font-size="10">Prometheus</text>
+                    <text x="90" y="95" text-anchor="middle" fill="#888" font-size="8">Metrics Collection</text>
+
+                    <rect x="15" y="120" width="150" height="60" rx="3" fill="rgba(255,102,0,0.1)" stroke="#ff6600"/>
+                    <text x="90" y="145" text-anchor="middle" fill="#ff6600" font-size="10">Grafana</text>
+                    <text x="90" y="165" text-anchor="middle" fill="#888" font-size="8">Dashboards</text>
+
+                    <rect x="15" y="190" width="150" height="60" rx="3" fill="rgba(118,185,0,0.1)" stroke="#76b900"/>
+                    <text x="90" y="215" text-anchor="middle" fill="#76b900" font-size="10">DCGM Exporter</text>
+                    <text x="90" y="235" text-anchor="middle" fill="#888" font-size="8">GPU Metrics</text>
+
+                    <rect x="15" y="260" width="150" height="60" rx="3" fill="rgba(0,240,255,0.1)" stroke="#00f0ff"/>
+                    <text x="90" y="285" text-anchor="middle" fill="#00f0ff" font-size="10">Node Exporter</text>
+                    <text x="90" y="305" text-anchor="middle" fill="#888" font-size="8">System Metrics</text>
+
+                    <!-- Live Metrics -->
+                    <rect x="15" y="335" width="150" height="130" rx="3" fill="rgba(0,0,0,0.3)"/>
+                    <text x="90" y="355" text-anchor="middle" fill="#888" font-size="9">LIVE METRICS</text>
+                    <text x="30" y="375" fill="#76b900" font-size="8">GPU Util:</text>
+                    <text x="130" y="375" fill="#76b900" font-size="9">87%</text>
+                    <text x="30" y="395" fill="#ff6600" font-size="8">GPU Temp:</text>
+                    <text x="130" y="395" fill="#ff6600" font-size="9">52°C</text>
+                    <text x="30" y="415" fill="#a855f7" font-size="8">Power:</text>
+                    <text x="130" y="415" fill="#a855f7" font-size="9">285W</text>
+                    <text x="30" y="435" fill="#00f0ff" font-size="8">VRAM:</text>
+                    <text x="130" y="435" fill="#00f0ff" font-size="9">41/92GB</text>
+                    <text x="30" y="455" fill="#00ff88" font-size="8">Uptime:</text>
+                    <text x="130" y="455" fill="#00ff88" font-size="9">847 days</text>
                 </g>
 
-                <!-- Rack 5 -->
-                <g transform="translate(740, 80)">
-                    <rect width="120" height="300" rx="5" fill="rgba(30,30,40,0.9)" stroke="#444" stroke-width="2"/>
-                    <rect x="10" y="10" width="100" height="40" rx="3" fill="rgba(234,179,8,0.2)" stroke="#eab308"/>
-                    <rect x="10" y="60" width="100" height="40" rx="3" fill="rgba(234,179,8,0.2)" stroke="#eab308"/>
-                    <rect x="10" y="110" width="100" height="40" rx="3" fill="rgba(234,179,8,0.2)" stroke="#eab308"/>
-                    <rect x="10" y="160" width="100" height="40" rx="3" fill="rgba(234,179,8,0.2)" stroke="#eab308"/>
-                    <rect x="10" y="210" width="100" height="40" rx="3" fill="rgba(234,179,8,0.2)" stroke="#eab308"/>
-                    <rect x="10" y="260" width="100" height="30" rx="3" fill="rgba(50,50,60,0.5)" stroke="#666"/>
-                    <text x="60" y="320" text-anchor="middle" fill="#888" font-size="10">STORAGE</text>
+                <!-- Cabinet 5 - Network/Storage -->
+                <g transform="translate(1020, 120)">
+                    <rect width="180" height="480" rx="8" fill="rgba(20,20,35,0.95)" stroke="#eab308" stroke-width="2"/>
+                    <rect x="10" y="10" width="160" height="30" fill="rgba(234,179,8,0.1)"/>
+                    <text x="90" y="30" text-anchor="middle" fill="#eab308" font-family="Orbitron" font-size="11">NETWORK/STORAGE</text>
+
+                    <rect x="15" y="50" width="150" height="70" rx="3" fill="rgba(234,179,8,0.1)" stroke="#eab308"/>
+                    <text x="90" y="75" text-anchor="middle" fill="#eab308" font-size="10">NFS Server</text>
+                    <text x="90" y="95" text-anchor="middle" fill="#888" font-size="8">Model Storage</text>
+                    <text x="90" y="110" text-anchor="middle" fill="#00ff88" font-size="8">3TB Available</text>
+
+                    <rect x="15" y="130" width="150" height="70" rx="3" fill="rgba(0,240,255,0.1)" stroke="#00f0ff"/>
+                    <text x="90" y="155" text-anchor="middle" fill="#00f0ff" font-size="10">100GbE Switch</text>
+                    <text x="90" y="175" text-anchor="middle" fill="#888" font-size="8">Low-latency fabric</text>
+                    <text x="90" y="190" text-anchor="middle" fill="#00ff88" font-size="8">0.5ms latency</text>
+
+                    <rect x="15" y="210" width="150" height="70" rx="3" fill="rgba(255,102,0,0.1)" stroke="#ff6600"/>
+                    <text x="90" y="235" text-anchor="middle" fill="#ff6600" font-size="10">Firewall</text>
+                    <text x="90" y="255" text-anchor="middle" fill="#888" font-size="8">Air-Gap Ready</text>
+                    <text x="90" y="270" text-anchor="middle" fill="#00ff88" font-size="8">Zero Trust</text>
+
+                    <rect x="15" y="290" width="150" height="70" rx="3" fill="rgba(255,0,255,0.1)" stroke="#ff00ff"/>
+                    <text x="90" y="315" text-anchor="middle" fill="#ff00ff" font-size="10">UPS Backup</text>
+                    <text x="90" y="335" text-anchor="middle" fill="#888" font-size="8">30 min runtime</text>
+                    <text x="90" y="350" text-anchor="middle" fill="#00ff88" font-size="8">Battery: 100%</text>
+
+                    <!-- Summary Stats -->
+                    <rect x="15" y="375" width="150" height="90" rx="3" fill="rgba(0,0,0,0.3)"/>
+                    <text x="90" y="395" text-anchor="middle" fill="#888" font-size="9">INFRASTRUCTURE</text>
+                    <text x="30" y="415" fill="#76b900" font-size="8">Total VRAM:</text>
+                    <text x="140" y="415" fill="#76b900" font-size="9">184GB</text>
+                    <text x="30" y="435" fill="#00f0ff" font-size="8">Network:</text>
+                    <text x="140" y="435" fill="#00f0ff" font-size="9">100Gbps</text>
+                    <text x="30" y="455" fill="#eab308" font-size="8">Storage:</text>
+                    <text x="140" y="455" fill="#eab308" font-size="9">3TB</text>
                 </g>
 
-                <!-- Rack 6 -->
-                <g transform="translate(890, 80)">
-                    <rect width="120" height="300" rx="5" fill="rgba(30,30,40,0.9)" stroke="#444" stroke-width="2"/>
-                    <rect x="10" y="10" width="100" height="90" rx="3" fill="rgba(255,102,0,0.2)" stroke="#ff6600"/>
-                    <text x="60" y="55" text-anchor="middle" fill="#ff6600" font-size="9">UPS BACKUP</text>
-                    <rect x="10" y="110" width="100" height="90" rx="3" fill="rgba(255,102,0,0.2)" stroke="#ff6600"/>
-                    <text x="60" y="155" text-anchor="middle" fill="#ff6600" font-size="9">POWER DIST</text>
-                    <rect x="10" y="210" width="100" height="50" rx="3" fill="rgba(50,50,60,0.5)" stroke="#666"/>
-                    <rect x="10" y="270" width="100" height="20" rx="3" fill="rgba(50,50,60,0.5)" stroke="#666"/>
-                    <text x="60" y="320" text-anchor="middle" fill="#888" font-size="10">POWER</text>
+                <!-- Cabinet 6 - Dashboard -->
+                <g transform="translate(1240, 120)">
+                    <rect width="140" height="480" rx="8" fill="rgba(20,20,35,0.95)" stroke="#00ff88" stroke-width="2"/>
+                    <rect x="10" y="10" width="120" height="30" fill="rgba(0,255,136,0.1)"/>
+                    <text x="70" y="30" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="11">DASHBOARD</text>
+
+                    <rect x="15" y="50" width="110" height="180" rx="3" fill="rgba(0,0,0,0.5)" stroke="#00ff88"/>
+                    <text x="70" y="75" text-anchor="middle" fill="#00ff88" font-size="9">WEB UI</text>
+                    <rect x="25" y="90" width="90" height="50" fill="rgba(0,255,136,0.1)"/>
+                    <text x="70" y="110" text-anchor="middle" fill="#888" font-size="7">AI Chat</text>
+                    <text x="70" y="130" text-anchor="middle" fill="#888" font-size="7">Interface</text>
+                    <rect x="25" y="150" width="90" height="30" fill="rgba(0,240,255,0.1)"/>
+                    <text x="70" y="170" text-anchor="middle" fill="#888" font-size="7">GPU Metrics</text>
+                    <rect x="25" y="190" width="90" height="30" fill="rgba(255,0,255,0.1)"/>
+                    <text x="70" y="210" text-anchor="middle" fill="#888" font-size="7">Model Admin</text>
+
+                    <rect x="15" y="245" width="110" height="100" rx="3" fill="rgba(0,0,0,0.3)"/>
+                    <text x="70" y="265" text-anchor="middle" fill="#888" font-size="8">11 PAGES</text>
+                    <text x="25" y="285" fill="#00ff88" font-size="7">● Dashboard</text>
+                    <text x="25" y="300" fill="#00f0ff" font-size="7">● Admin</text>
+                    <text x="25" y="315" fill="#ff00ff" font-size="7">● API Docs</text>
+                    <text x="25" y="330" fill="#eab308" font-size="7">● Architecture</text>
+
+                    <!-- Access Info -->
+                    <rect x="15" y="360" width="110" height="105" rx="3" fill="rgba(0,255,136,0.1)"/>
+                    <text x="70" y="380" text-anchor="middle" fill="#00ff88" font-size="8">ACCESS</text>
+                    <text x="70" y="400" text-anchor="middle" fill="#888" font-size="7">https://</text>
+                    <text x="70" y="415" text-anchor="middle" fill="#fff" font-size="8">localhost</text>
+                    <text x="70" y="440" text-anchor="middle" fill="#888" font-size="7">HTTPS Enabled</text>
+                    <text x="70" y="455" text-anchor="middle" fill="#00ff88" font-size="7">● LIVE</text>
                 </g>
 
-                <!-- Cooling Vents -->
-                <g fill="rgba(0,200,255,0.1)" stroke="#00f0ff" stroke-width="0.5">
-                    <rect x="1040" y="100" width="60" height="250" rx="5"/>
-                    <line x1="1050" y1="120" x2="1090" y2="120"/>
-                    <line x1="1050" y1="140" x2="1090" y2="140"/>
-                    <line x1="1050" y1="160" x2="1090" y2="160"/>
-                    <line x1="1050" y1="180" x2="1090" y2="180"/>
-                    <line x1="1050" y1="200" x2="1090" y2="200"/>
-                    <text x="1070" y="380" text-anchor="middle" fill="#00f0ff" font-size="9">COOLING</text>
-                </g>
-
-                <!-- Stats Bar -->
-                <g transform="translate(100, 430)">
-                    <text x="0" y="0" fill="#76b900" font-size="11">Total GPU Power: <tspan fill="#fff">570W</tspan></text>
-                    <text x="200" y="0" fill="#00f0ff" font-size="11">Network: <tspan fill="#fff">100 Gbps</tspan></text>
-                    <text x="400" y="0" fill="#eab308" font-size="11">Storage: <tspan fill="#fff">24 TB NVMe</tspan></text>
-                    <text x="600" y="0" fill="#ff6600" font-size="11">Power Efficiency: <tspan fill="#fff">PUE 1.2</tspan></text>
-                    <text x="850" y="0" fill="#00ff88" font-size="11">Uptime: <tspan fill="#fff">99.99%</tspan></text>
-                </g>
-            </svg>
-        </div>
-        <p class="big-graphic-label">Enterprise-grade infrastructure with redundant power and cooling</p>
-    </section>
-
-    <!-- EPIC GRAPHIC 5: AI Brain Connectome -->
-    <section class="big-graphic-section">
-        <div class="big-graphic-container">
-            <svg viewBox="0 0 1200 450" class="big-graphic-svg">
-                <defs>
-                    <radialGradient id="brainGlow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:0.6"/>
-                        <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
-                    </radialGradient>
-                </defs>
-
-                <text x="600" y="40" text-anchor="middle" fill="#ff00ff" font-family="Orbitron" font-size="22">AI COGNITIVE ARCHITECTURE</text>
-
-                <!-- Brain Outline -->
-                <ellipse cx="600" cy="250" rx="350" ry="180" fill="none" stroke="rgba(255,0,255,0.3)" stroke-width="2"/>
-                <ellipse cx="600" cy="250" rx="300" ry="150" fill="url(#brainGlow)"/>
-
-                <!-- Cognitive Regions -->
-                <!-- Language Center -->
-                <g transform="translate(350, 180)">
-                    <circle r="50" fill="rgba(0,240,255,0.3)" stroke="#00f0ff" stroke-width="2">
-                        <animate attributeName="r" values="50;55;50" dur="3s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="0" y="5" text-anchor="middle" fill="#00f0ff" font-size="11">LANGUAGE</text>
-                    <text x="0" y="20" text-anchor="middle" fill="#888" font-size="9">NLP Engine</text>
-                </g>
-
-                <!-- Reasoning Center -->
-                <g transform="translate(600, 150)">
-                    <circle r="60" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="2">
-                        <animate attributeName="r" values="60;65;60" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="0" y="0" text-anchor="middle" fill="#00ff88" font-size="11">REASONING</text>
-                    <text x="0" y="15" text-anchor="middle" fill="#888" font-size="9">Logic Core</text>
-                </g>
-
-                <!-- Memory Center -->
-                <g transform="translate(850, 180)">
-                    <circle r="50" fill="rgba(234,179,8,0.3)" stroke="#eab308" stroke-width="2">
-                        <animate attributeName="r" values="50;55;50" dur="3.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="0" y="5" text-anchor="middle" fill="#eab308" font-size="11">MEMORY</text>
-                    <text x="0" y="20" text-anchor="middle" fill="#888" font-size="9">Context Store</text>
-                </g>
-
-                <!-- Vision Center -->
-                <g transform="translate(400, 300)">
-                    <circle r="45" fill="rgba(168,85,247,0.3)" stroke="#a855f7" stroke-width="2">
-                        <animate attributeName="r" values="45;50;45" dur="2.8s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="0" y="5" text-anchor="middle" fill="#a855f7" font-size="11">VISION</text>
-                    <text x="0" y="20" text-anchor="middle" fill="#888" font-size="9">Multimodal</text>
-                </g>
-
-                <!-- Action Center -->
-                <g transform="translate(600, 340)">
-                    <circle r="45" fill="rgba(255,102,0,0.3)" stroke="#ff6600" stroke-width="2">
-                        <animate attributeName="r" values="45;50;45" dur="2.2s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="0" y="5" text-anchor="middle" fill="#ff6600" font-size="11">ACTION</text>
-                    <text x="0" y="20" text-anchor="middle" fill="#888" font-size="9">Tool Use</text>
-                </g>
-
-                <!-- Knowledge Center -->
-                <g transform="translate(800, 300)">
-                    <circle r="45" fill="rgba(255,0,255,0.3)" stroke="#ff00ff" stroke-width="2">
-                        <animate attributeName="r" values="45;50;45" dur="3.2s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="0" y="5" text-anchor="middle" fill="#ff00ff" font-size="11">KNOWLEDGE</text>
-                    <text x="0" y="20" text-anchor="middle" fill="#888" font-size="9">RAG Engine</text>
-                </g>
-
-                <!-- Neural Connections -->
-                <g stroke="rgba(255,255,255,0.2)" stroke-width="1">
-                    <line x1="400" y1="180" x2="540" y2="150"/>
-                    <line x1="660" y1="150" x2="800" y2="180"/>
-                    <line x1="600" y1="210" x2="600" y2="295"/>
-                    <line x1="400" y1="230" x2="445" y2="260"/>
-                    <line x1="755" y1="260" x2="800" y2="230"/>
-                    <line x1="445" y1="300" x2="555" y2="340"/>
-                    <line x1="645" y1="340" x2="755" y2="300"/>
-                    <line x1="350" y1="180" x2="400" y2="255"/>
-                    <line x1="850" y1="180" x2="800" y2="255"/>
-                </g>
-
-                <!-- Synaptic Pulses -->
-                <circle r="4" fill="#00f0ff">
-                    <animateMotion dur="2s" repeatCount="indefinite" path="M400,180 Q500,165 540,150"/>
-                </circle>
-                <circle r="4" fill="#00ff88">
-                    <animateMotion dur="2.5s" repeatCount="indefinite" path="M600,210 L600,295"/>
-                </circle>
-                <circle r="4" fill="#ff00ff">
-                    <animateMotion dur="3s" repeatCount="indefinite" path="M660,150 Q730,165 800,180"/>
-                </circle>
-                <circle r="4" fill="#eab308">
-                    <animateMotion dur="2.2s" repeatCount="indefinite" path="M445,300 Q500,320 555,340"/>
-                </circle>
-
-                <!-- Input/Output -->
-                <g transform="translate(100, 220)">
-                    <rect width="100" height="60" rx="10" fill="rgba(0,240,255,0.2)" stroke="#00f0ff" stroke-width="2"/>
-                    <text x="50" y="25" text-anchor="middle" fill="#00f0ff" font-size="10">INPUT</text>
-                    <text x="50" y="45" text-anchor="middle" fill="#888" font-size="8">Prompt Stream</text>
-                    <path d="M100,250 L250,250" stroke="#00f0ff" stroke-width="2" stroke-dasharray="5,5">
-                        <animate attributeName="stroke-dashoffset" from="10" to="0" dur="0.5s" repeatCount="indefinite"/>
-                    </path>
-                </g>
-
-                <g transform="translate(1000, 220)">
-                    <rect width="100" height="60" rx="10" fill="rgba(0,255,136,0.2)" stroke="#00ff88" stroke-width="2"/>
-                    <text x="50" y="25" text-anchor="middle" fill="#00ff88" font-size="10">OUTPUT</text>
-                    <text x="50" y="45" text-anchor="middle" fill="#888" font-size="8">Response</text>
-                    <path d="M950,250 L1000,250" stroke="#00ff88" stroke-width="2" stroke-dasharray="5,5">
-                        <animate attributeName="stroke-dashoffset" from="10" to="0" dur="0.5s" repeatCount="indefinite"/>
-                    </path>
-                </g>
-
-                <!-- Stats -->
-                <g transform="translate(200, 420)">
-                    <text x="0" y="0" fill="#888" font-size="11">Parameters: <tspan fill="#ff00ff">70 Billion</tspan></text>
-                    <text x="200" y="0" fill="#888" font-size="11">Attention Layers: <tspan fill="#00f0ff">80</tspan></text>
-                    <text x="400" y="0" fill="#888" font-size="11">Context: <tspan fill="#00ff88">128K tokens</tspan></text>
-                    <text x="600" y="0" fill="#888" font-size="11">Latency: <tspan fill="#eab308">45ms TTFT</tspan></text>
-                </g>
-            </svg>
-        </div>
-        <p class="big-graphic-label">Cognitive architecture powering intelligent reasoning</p>
-    </section>
-
-    <!-- EPIC GRAPHIC 6: Satellite Network -->
-    <section class="big-graphic-section">
-        <div class="big-graphic-container">
-            <svg viewBox="0 0 1200 450" class="big-graphic-svg">
-                <defs>
-                    <radialGradient id="earthGrad" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#1a4a7a"/>
-                        <stop offset="100%" style="stop-color:#0a2a4a"/>
-                    </radialGradient>
-                </defs>
-
-                <text x="600" y="40" text-anchor="middle" fill="#00f0ff" font-family="Orbitron" font-size="22">GLOBAL AI INFERENCE NETWORK</text>
-
-                <!-- Earth -->
-                <circle cx="600" cy="350" r="180" fill="url(#earthGrad)" stroke="#00f0ff" stroke-width="1"/>
-                <ellipse cx="600" cy="350" rx="180" ry="60" fill="none" stroke="rgba(0,255,136,0.3)" stroke-width="1"/>
-
-                <!-- Continents (simplified) -->
-                <g fill="rgba(0,200,100,0.3)">
-                    <ellipse cx="520" cy="320" rx="40" ry="25"/>
-                    <ellipse cx="620" cy="300" rx="50" ry="30"/>
-                    <ellipse cx="700" cy="340" rx="35" ry="20"/>
-                    <ellipse cx="550" cy="380" rx="30" ry="15"/>
-                    <ellipse cx="660" cy="390" rx="25" ry="12"/>
-                </g>
-
-                <!-- Orbital Ring -->
-                <ellipse cx="600" cy="250" rx="400" ry="100" fill="none" stroke="rgba(0,240,255,0.2)" stroke-width="1" stroke-dasharray="10,5"/>
-
-                <!-- Satellites -->
-                <g class="satellites">
-                    <!-- Sat 1 -->
-                    <g transform="translate(200, 200)">
-                        <rect x="-15" y="-8" width="30" height="16" rx="3" fill="#333" stroke="#00f0ff"/>
-                        <rect x="-40" y="-4" width="25" height="8" fill="rgba(0,100,200,0.5)"/>
-                        <rect x="15" y="-4" width="25" height="8" fill="rgba(0,100,200,0.5)"/>
-                        <circle cx="0" cy="0" r="3" fill="#00ff88"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></circle>
-                        <animateTransform attributeName="transform" type="translate" values="200,200;220,210;200,200" dur="5s" repeatCount="indefinite"/>
-                    </g>
-
-                    <!-- Sat 2 -->
-                    <g transform="translate(400, 150)">
-                        <rect x="-15" y="-8" width="30" height="16" rx="3" fill="#333" stroke="#ff00ff"/>
-                        <rect x="-40" y="-4" width="25" height="8" fill="rgba(200,0,100,0.5)"/>
-                        <rect x="15" y="-4" width="25" height="8" fill="rgba(200,0,100,0.5)"/>
-                        <circle cx="0" cy="0" r="3" fill="#ff00ff"><animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/></circle>
-                        <animateTransform attributeName="transform" type="translate" values="400,150;380,160;400,150" dur="6s" repeatCount="indefinite"/>
-                    </g>
-
-                    <!-- Sat 3 -->
-                    <g transform="translate(600, 120)">
-                        <rect x="-20" y="-10" width="40" height="20" rx="4" fill="#333" stroke="#00ff88"/>
-                        <rect x="-50" y="-5" width="30" height="10" fill="rgba(0,200,100,0.5)"/>
-                        <rect x="20" y="-5" width="30" height="10" fill="rgba(0,200,100,0.5)"/>
-                        <circle cx="0" cy="0" r="4" fill="#00ff88"><animate attributeName="opacity" values="1;0;1" dur="0.6s" repeatCount="indefinite"/></circle>
-                        <animateTransform attributeName="transform" type="translate" values="600,120;600,130;600,120" dur="4s" repeatCount="indefinite"/>
-                    </g>
-
-                    <!-- Sat 4 -->
-                    <g transform="translate(800, 150)">
-                        <rect x="-15" y="-8" width="30" height="16" rx="3" fill="#333" stroke="#eab308"/>
-                        <rect x="-40" y="-4" width="25" height="8" fill="rgba(200,150,0,0.5)"/>
-                        <rect x="15" y="-4" width="25" height="8" fill="rgba(200,150,0,0.5)"/>
-                        <circle cx="0" cy="0" r="3" fill="#eab308"><animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/></circle>
-                        <animateTransform attributeName="transform" type="translate" values="800,150;820,160;800,150" dur="5.5s" repeatCount="indefinite"/>
-                    </g>
-
-                    <!-- Sat 5 -->
-                    <g transform="translate(1000, 200)">
-                        <rect x="-15" y="-8" width="30" height="16" rx="3" fill="#333" stroke="#a855f7"/>
-                        <rect x="-40" y="-4" width="25" height="8" fill="rgba(150,50,200,0.5)"/>
-                        <rect x="15" y="-4" width="25" height="8" fill="rgba(150,50,200,0.5)"/>
-                        <circle cx="0" cy="0" r="3" fill="#a855f7"><animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/></circle>
-                        <animateTransform attributeName="transform" type="translate" values="1000,200;980,210;1000,200" dur="4.5s" repeatCount="indefinite"/>
-                    </g>
-                </g>
-
-                <!-- Communication Beams -->
-                <g stroke-width="1" stroke-dasharray="5,5" opacity="0.6">
-                    <line x1="200" y1="208" x2="500" y2="300" stroke="#00f0ff"><animate attributeName="stroke-dashoffset" from="10" to="0" dur="0.5s" repeatCount="indefinite"/></line>
-                    <line x1="400" y1="158" x2="550" y2="280" stroke="#ff00ff"><animate attributeName="stroke-dashoffset" from="10" to="0" dur="0.5s" repeatCount="indefinite"/></line>
-                    <line x1="600" y1="140" x2="600" y2="260" stroke="#00ff88"><animate attributeName="stroke-dashoffset" from="10" to="0" dur="0.5s" repeatCount="indefinite"/></line>
-                    <line x1="800" y1="158" x2="650" y2="280" stroke="#eab308"><animate attributeName="stroke-dashoffset" from="10" to="0" dur="0.5s" repeatCount="indefinite"/></line>
-                    <line x1="1000" y1="208" x2="700" y2="300" stroke="#a855f7"><animate attributeName="stroke-dashoffset" from="10" to="0" dur="0.5s" repeatCount="indefinite"/></line>
-                </g>
-
-                <!-- Ground Stations -->
-                <g>
-                    <circle cx="500" cy="320" r="8" fill="#00ff88" opacity="0.8"><animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/></circle>
-                    <circle cx="620" cy="300" r="8" fill="#ff00ff" opacity="0.8"><animate attributeName="r" values="8;12;8" dur="2.3s" repeatCount="indefinite"/></circle>
-                    <circle cx="700" cy="340" r="8" fill="#00f0ff" opacity="0.8"><animate attributeName="r" values="8;12;8" dur="1.8s" repeatCount="indefinite"/></circle>
-                </g>
-
-                <!-- Network Stats -->
-                <g transform="translate(100, 430)">
-                    <text x="0" y="0" fill="#00f0ff" font-size="11">Active Satellites: <tspan fill="#fff">5</tspan></text>
-                    <text x="180" y="0" fill="#00ff88" font-size="11">Ground Stations: <tspan fill="#fff">3</tspan></text>
-                    <text x="380" y="0" fill="#ff00ff" font-size="11">Global Latency: <tspan fill="#fff">&lt;50ms</tspan></text>
-                    <text x="580" y="0" fill="#eab308" font-size="11">Coverage: <tspan fill="#fff">99.7%</tspan></text>
-                    <text x="780" y="0" fill="#a855f7" font-size="11">Bandwidth: <tspan fill="#fff">10 Tbps</tspan></text>
-                </g>
-            </svg>
-        </div>
-        <p class="big-graphic-label">Global edge inference network for low-latency AI</p>
-    </section>
-
-    <!-- EPIC GRAPHIC 7: Cybernetic City -->
-    <section class="big-graphic-section">
-        <div class="big-graphic-container">
-            <svg viewBox="0 0 1200 450" class="big-graphic-svg">
-                <defs>
-                    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#0a0a20"/>
-                        <stop offset="100%" style="stop-color:#1a0a30"/>
-                    </linearGradient>
-                </defs>
-
-                <!-- Sky -->
-                <rect width="1200" height="450" fill="url(#skyGrad)"/>
-
-                <text x="600" y="40" text-anchor="middle" fill="#00f0ff" font-family="Orbitron" font-size="22">SMART CITY AI INFRASTRUCTURE</text>
-
-                <!-- Ground Line -->
-                <line x1="0" y1="400" x2="1200" y2="400" stroke="#00f0ff" stroke-width="1" opacity="0.3"/>
-
-                <!-- Buildings -->
-                <!-- Building 1 - Tall -->
-                <g transform="translate(100, 150)">
-                    <rect width="80" height="250" fill="rgba(20,20,40,0.9)" stroke="#00f0ff" stroke-width="1"/>
-                    <g fill="rgba(0,240,255,0.3)">
-                        <rect x="10" y="20" width="15" height="15"/><rect x="30" y="20" width="15" height="15"/><rect x="50" y="20" width="15" height="15"/>
-                        <rect x="10" y="45" width="15" height="15"/><rect x="30" y="45" width="15" height="15"/><rect x="50" y="45" width="15" height="15"/>
-                        <rect x="10" y="70" width="15" height="15"/><rect x="30" y="70" width="15" height="15"/><rect x="50" y="70" width="15" height="15"/>
-                        <rect x="10" y="95" width="15" height="15"/><rect x="30" y="95" width="15" height="15"/><rect x="50" y="95" width="15" height="15"/>
-                        <rect x="10" y="120" width="15" height="15"/><rect x="30" y="120" width="15" height="15"/><rect x="50" y="120" width="15" height="15"/>
-                    </g>
-                    <circle cx="40" cy="10" r="3" fill="#ff0000"><animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/></circle>
-                </g>
-
-                <!-- Building 2 - Medium with antenna -->
-                <g transform="translate(200, 200)">
-                    <rect width="100" height="200" fill="rgba(20,20,40,0.9)" stroke="#ff00ff" stroke-width="1"/>
-                    <line x1="50" y1="0" x2="50" y2="-40" stroke="#ff00ff" stroke-width="2"/>
-                    <circle cx="50" cy="-45" r="5" fill="#ff00ff"><animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/></circle>
-                    <g fill="rgba(255,0,255,0.3)">
-                        <rect x="10" y="20" width="20" height="20"/><rect x="40" y="20" width="20" height="20"/><rect x="70" y="20" width="20" height="20"/>
-                        <rect x="10" y="50" width="20" height="20"/><rect x="40" y="50" width="20" height="20"/><rect x="70" y="50" width="20" height="20"/>
-                        <rect x="10" y="80" width="20" height="20"/><rect x="40" y="80" width="20" height="20"/><rect x="70" y="80" width="20" height="20"/>
-                    </g>
-                </g>
-
-                <!-- Building 3 - Data Center (Main) -->
-                <g transform="translate(350, 120)">
-                    <rect width="200" height="280" fill="rgba(30,30,50,0.95)" stroke="#00ff88" stroke-width="2"/>
-                    <text x="100" y="30" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="12">AI DATA CENTER</text>
-                    <rect x="20" y="50" width="160" height="100" fill="rgba(0,255,136,0.1)" stroke="#00ff88"/>
-                    <g fill="rgba(0,255,136,0.4)">
-                        <rect x="30" y="60" width="30" height="35"/><rect x="70" y="60" width="30" height="35"/><rect x="110" y="60" width="30" height="35"/><rect x="150" y="60" width="20" height="35"/>
-                        <rect x="30" y="105" width="30" height="35"/><rect x="70" y="105" width="30" height="35"/><rect x="110" y="105" width="30" height="35"/><rect x="150" y="105" width="20" height="35"/>
-                    </g>
-                    <text x="100" y="175" text-anchor="middle" fill="#888" font-size="9">GPU CLUSTER</text>
-                    <rect x="20" y="190" width="160" height="50" fill="rgba(0,0,0,0.3)" stroke="#00ff88"/>
-                    <rect x="25" y="200" width="100" height="10" fill="#00ff88"><animate attributeName="width" values="100;130;100" dur="2s" repeatCount="indefinite"/></rect>
-                    <text x="100" y="235" text-anchor="middle" fill="#00ff88" font-size="10">UTILIZATION: 87%</text>
-                </g>
-
-                <!-- Building 4 -->
-                <g transform="translate(580, 180)">
-                    <rect width="120" height="220" fill="rgba(20,20,40,0.9)" stroke="#eab308" stroke-width="1"/>
-                    <g fill="rgba(234,179,8,0.3)">
-                        <rect x="15" y="20" width="25" height="25"/><rect x="50" y="20" width="25" height="25"/><rect x="85" y="20" width="20" height="25"/>
-                        <rect x="15" y="55" width="25" height="25"/><rect x="50" y="55" width="25" height="25"/><rect x="85" y="55" width="20" height="25"/>
-                        <rect x="15" y="90" width="25" height="25"/><rect x="50" y="90" width="25" height="25"/><rect x="85" y="90" width="20" height="25"/>
-                        <rect x="15" y="125" width="25" height="25"/><rect x="50" y="125" width="25" height="25"/><rect x="85" y="125" width="20" height="25"/>
-                    </g>
-                </g>
-
-                <!-- Building 5 - Short -->
-                <g transform="translate(720, 280)">
-                    <rect width="90" height="120" fill="rgba(20,20,40,0.9)" stroke="#a855f7" stroke-width="1"/>
-                    <g fill="rgba(168,85,247,0.3)">
-                        <rect x="10" y="15" width="20" height="20"/><rect x="35" y="15" width="20" height="20"/><rect x="60" y="15" width="20" height="20"/>
-                        <rect x="10" y="45" width="20" height="20"/><rect x="35" y="45" width="20" height="20"/><rect x="60" y="45" width="20" height="20"/>
-                    </g>
-                </g>
-
-                <!-- Building 6 - Tall Slim -->
-                <g transform="translate(840, 100)">
-                    <rect width="60" height="300" fill="rgba(20,20,40,0.9)" stroke="#ff6600" stroke-width="1"/>
-                    <g fill="rgba(255,102,0,0.3)">
-                        <rect x="10" y="20" width="15" height="15"/><rect x="35" y="20" width="15" height="15"/>
-                        <rect x="10" y="45" width="15" height="15"/><rect x="35" y="45" width="15" height="15"/>
-                        <rect x="10" y="70" width="15" height="15"/><rect x="35" y="70" width="15" height="15"/>
-                        <rect x="10" y="95" width="15" height="15"/><rect x="35" y="95" width="15" height="15"/>
-                        <rect x="10" y="120" width="15" height="15"/><rect x="35" y="120" width="15" height="15"/>
-                        <rect x="10" y="145" width="15" height="15"/><rect x="35" y="145" width="15" height="15"/>
-                    </g>
-                </g>
-
-                <!-- Building 7 -->
-                <g transform="translate(930, 220)">
-                    <rect width="100" height="180" fill="rgba(20,20,40,0.9)" stroke="#00f0ff" stroke-width="1"/>
-                    <g fill="rgba(0,240,255,0.3)">
-                        <rect x="10" y="20" width="20" height="20"/><rect x="40" y="20" width="20" height="20"/><rect x="70" y="20" width="20" height="20"/>
-                        <rect x="10" y="50" width="20" height="20"/><rect x="40" y="50" width="20" height="20"/><rect x="70" y="50" width="20" height="20"/>
-                        <rect x="10" y="80" width="20" height="20"/><rect x="40" y="80" width="20" height="20"/><rect x="70" y="80" width="20" height="20"/>
-                    </g>
-                </g>
-
-                <!-- Building 8 -->
-                <g transform="translate(1050, 250)">
-                    <rect width="80" height="150" fill="rgba(20,20,40,0.9)" stroke="#ff00ff" stroke-width="1"/>
-                    <g fill="rgba(255,0,255,0.3)">
-                        <rect x="10" y="20" width="15" height="15"/><rect x="30" y="20" width="15" height="15"/><rect x="50" y="20" width="15" height="15"/>
-                        <rect x="10" y="45" width="15" height="15"/><rect x="30" y="45" width="15" height="15"/><rect x="50" y="45" width="15" height="15"/>
-                        <rect x="10" y="70" width="15" height="15"/><rect x="30" y="70" width="15" height="15"/><rect x="50" y="70" width="15" height="15"/>
-                    </g>
-                </g>
-
-                <!-- Flying Drones -->
-                <g>
-                    <circle cx="250" cy="100" r="5" fill="#00ff88">
-                        <animateMotion dur="8s" repeatCount="indefinite" path="M0,0 Q100,-20 200,0 T400,0"/>
-                    </circle>
-                    <circle cx="700" cy="80" r="4" fill="#ff00ff">
-                        <animateMotion dur="10s" repeatCount="indefinite" path="M0,0 Q-100,30 -200,0 T-400,0"/>
-                    </circle>
-                </g>
-
-                <!-- Network Lines -->
-                <g stroke="rgba(0,240,255,0.2)" stroke-width="1">
-                    <line x1="140" y1="150" x2="350" y2="120"/>
-                    <line x1="300" y1="200" x2="350" y2="200"/>
-                    <line x1="550" y1="200" x2="580" y2="200"/>
-                    <line x1="700" y1="220" x2="720" y2="280"/>
-                    <line x1="810" y1="320" x2="840" y2="300"/>
-                    <line x1="900" y1="200" x2="930" y2="220"/>
-                </g>
-
-                <!-- Stats -->
-                <g transform="translate(100, 430)">
-                    <text x="0" y="0" fill="#00ff88" font-size="11">Connected Buildings: <tspan fill="#fff">8</tspan></text>
-                    <text x="200" y="0" fill="#00f0ff" font-size="11">IoT Sensors: <tspan fill="#fff">10,000+</tspan></text>
-                    <text x="420" y="0" fill="#ff00ff" font-size="11">AI Decisions/sec: <tspan fill="#fff">50,000</tspan></text>
-                    <text x="650" y="0" fill="#eab308" font-size="11">Energy Saved: <tspan fill="#fff">45%</tspan></text>
-                    <text x="880" y="0" fill="#a855f7" font-size="11">Response Time: <tspan fill="#fff">10ms</tspan></text>
-                </g>
-            </svg>
-        </div>
-        <p class="big-graphic-label">AI-powered smart city infrastructure and IoT integration</p>
-    </section>
-
-    <!-- EPIC GRAPHIC 8: AI Mission Control -->
-    <section class="big-graphic-section">
-        <div class="big-graphic-container">
-            <svg viewBox="0 0 1200 450" class="big-graphic-svg">
-                <text x="600" y="40" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="22">AI MISSION CONTROL CENTER</text>
-
-                <!-- Main Display -->
-                <g transform="translate(300, 80)">
-                    <rect width="600" height="300" rx="15" fill="rgba(0,0,0,0.7)" stroke="#00ff88" stroke-width="3"/>
-                    <rect x="10" y="10" width="580" height="30" fill="rgba(0,255,136,0.1)"/>
-                    <text x="300" y="30" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="14">INFERENCE OPERATIONS - LIVE</text>
-
-                    <!-- Status Panels -->
-                    <g transform="translate(20, 50)">
-                        <rect width="180" height="110" rx="8" fill="rgba(0,255,136,0.1)" stroke="#00ff88"/>
-                        <text x="90" y="25" text-anchor="middle" fill="#00ff88" font-size="12">GPU STATUS</text>
-                        <text x="90" y="55" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="24">87%</text>
-                        <text x="90" y="80" text-anchor="middle" fill="#888" font-size="10">UTILIZATION</text>
-                        <rect x="20" y="90" width="140" height="10" fill="rgba(0,0,0,0.5)" rx="5"/>
-                        <rect x="20" y="90" width="122" height="10" fill="#00ff88" rx="5"><animate attributeName="width" values="122;130;122" dur="2s" repeatCount="indefinite"/></rect>
-                    </g>
-
-                    <g transform="translate(210, 50)">
-                        <rect width="180" height="110" rx="8" fill="rgba(255,0,255,0.1)" stroke="#ff00ff"/>
-                        <text x="90" y="25" text-anchor="middle" fill="#ff00ff" font-size="12">INFERENCE</text>
-                        <text x="90" y="55" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="24">1,247</text>
-                        <text x="90" y="80" text-anchor="middle" fill="#888" font-size="10">TOKENS/SEC</text>
-                        <circle cx="90" cy="95" r="6" fill="#ff00ff"><animate attributeName="opacity" values="1;0.3;1" dur="0.5s" repeatCount="indefinite"/></circle>
-                    </g>
-
-                    <g transform="translate(400, 50)">
-                        <rect width="180" height="110" rx="8" fill="rgba(0,240,255,0.1)" stroke="#00f0ff"/>
-                        <text x="90" y="25" text-anchor="middle" fill="#00f0ff" font-size="12">LATENCY</text>
-                        <text x="90" y="55" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="24">45ms</text>
-                        <text x="90" y="80" text-anchor="middle" fill="#888" font-size="10">TIME TO FIRST TOKEN</text>
-                        <text x="90" y="100" text-anchor="middle" fill="#00ff88" font-size="10">● OPTIMAL</text>
-                    </g>
-
-                    <!-- Live Graph -->
-                    <g transform="translate(20, 170)">
-                        <rect width="560" height="100" rx="5" fill="rgba(0,0,0,0.3)" stroke="#444"/>
-                        <text x="10" y="15" fill="#888" font-size="9">REQUESTS/MIN</text>
-
-                        <!-- Graph Line -->
-                        <polyline points="20,80 60,70 100,75 140,50 180,60 220,40 260,55 300,35 340,45 380,30 420,40 460,25 500,35 540,20" fill="none" stroke="#00ff88" stroke-width="2">
-                            <animate attributeName="stroke-dashoffset" from="500" to="0" dur="2s" fill="freeze"/>
-                        </polyline>
-                        <polyline points="20,85 60,80 100,82 140,70 180,75 220,65 260,70 300,60 340,65 380,55 420,60 460,50 500,55 540,45" fill="none" stroke="#ff00ff" stroke-width="1" opacity="0.5"/>
-
-                        <!-- Labels -->
-                        <text x="540" y="95" text-anchor="end" fill="#888" font-size="8">now</text>
-                        <text x="20" y="95" fill="#888" font-size="8">-10m</text>
-                    </g>
-
-                    <!-- Model Indicator -->
-                    <g transform="translate(20, 280)">
-                        <text x="0" y="0" fill="#888" font-size="10">ACTIVE MODEL:</text>
-                        <text x="100" y="0" fill="#00f0ff" font-family="Orbitron" font-size="10">Llama 3.3 70B</text>
-                        <text x="280" y="0" fill="#888" font-size="10">VRAM:</text>
-                        <text x="320" y="0" fill="#76b900" font-size="10">35GB / 184GB</text>
-                        <text x="450" y="0" fill="#888" font-size="10">TEMP:</text>
-                        <text x="490" y="0" fill="#00ff88" font-size="10">52°C</text>
-                    </g>
-                </g>
-
-                <!-- Side Panels -->
-                <g transform="translate(50, 100)">
-                    <rect width="200" height="250" rx="10" fill="rgba(0,0,0,0.5)" stroke="#444"/>
-                    <text x="100" y="25" text-anchor="middle" fill="#888" font-size="11">QUEUE STATUS</text>
-                    <g transform="translate(20, 40)">
-                        <rect width="160" height="25" fill="rgba(0,255,136,0.2)" rx="3"/>
-                        <text x="10" y="17" fill="#00ff88" font-size="10">Active: 3</text>
-                        <rect y="30" width="160" height="25" fill="rgba(234,179,8,0.2)" rx="3"/>
-                        <text x="10" y="47" fill="#eab308" font-size="10">Pending: 12</text>
-                        <rect y="60" width="160" height="25" fill="rgba(0,240,255,0.2)" rx="3"/>
-                        <text x="10" y="77" fill="#00f0ff" font-size="10">Completed: 1,847</text>
-                    </g>
-                </g>
-
-                <g transform="translate(950, 100)">
-                    <rect width="200" height="250" rx="10" fill="rgba(0,0,0,0.5)" stroke="#444"/>
-                    <text x="100" y="25" text-anchor="middle" fill="#888" font-size="11">SYSTEM HEALTH</text>
-                    <g transform="translate(20, 40)">
-                        <circle cx="10" cy="10" r="6" fill="#00ff88"/><text x="25" y="14" fill="#888" font-size="10">vLLM: Online</text>
-                        <circle cx="10" cy="35" r="6" fill="#00ff88"/><text x="25" y="39" fill="#888" font-size="10">K8s: Healthy</text>
-                        <circle cx="10" cy="60" r="6" fill="#00ff88"/><text x="25" y="64" fill="#888" font-size="10">GPU: Active</text>
-                        <circle cx="10" cy="85" r="6" fill="#00ff88"/><text x="25" y="89" fill="#888" font-size="10">API: Ready</text>
-                        <circle cx="10" cy="110" r="6" fill="#eab308"/><text x="25" y="114" fill="#888" font-size="10">Storage: 78%</text>
-                    </g>
+                <!-- Connection Lines Between Cabinets -->
+                <g stroke="#00f0ff" stroke-width="2" stroke-dasharray="5,5" opacity="0.5">
+                    <line x1="280" y1="350" x2="320" y2="350"><animate attributeName="stroke-dashoffset" from="10" to="0" dur="1s" repeatCount="indefinite"/></line>
+                    <line x1="500" y1="350" x2="540" y2="350"><animate attributeName="stroke-dashoffset" from="10" to="0" dur="1s" repeatCount="indefinite"/></line>
+                    <line x1="760" y1="350" x2="800" y2="350"><animate attributeName="stroke-dashoffset" from="10" to="0" dur="1s" repeatCount="indefinite"/></line>
+                    <line x1="980" y1="350" x2="1020" y2="350"><animate attributeName="stroke-dashoffset" from="10" to="0" dur="1s" repeatCount="indefinite"/></line>
+                    <line x1="1200" y1="350" x2="1240" y2="350"><animate attributeName="stroke-dashoffset" from="10" to="0" dur="1s" repeatCount="indefinite"/></line>
                 </g>
 
                 <!-- Bottom Stats -->
-                <g transform="translate(100, 420)">
-                    <text x="0" y="0" fill="#00ff88" font-size="11">Uptime: <tspan fill="#fff">847 days</tspan></text>
-                    <text x="180" y="0" fill="#ff00ff" font-size="11">Total Requests: <tspan fill="#fff">2.4M</tspan></text>
-                    <text x="400" y="0" fill="#00f0ff" font-size="11">Avg Response: <tspan fill="#fff">1.2s</tspan></text>
-                    <text x="600" y="0" fill="#eab308" font-size="11">Success Rate: <tspan fill="#fff">99.97%</tspan></text>
-                    <text x="820" y="0" fill="#a855f7" font-size="11">Active Users: <tspan fill="#fff">47</tspan></text>
+                <g transform="translate(100, 640)">
+                    <text x="0" y="0" fill="#76b900" font-size="13">Total VRAM: <tspan fill="#fff" font-family="Orbitron">184GB</tspan></text>
+                    <text x="220" y="0" fill="#ff00ff" font-size="13">Models: <tspan fill="#fff" font-family="Orbitron">9</tspan></text>
+                    <text x="380" y="0" fill="#00f0ff" font-size="13">Network: <tspan fill="#fff" font-family="Orbitron">100Gbps</tspan></text>
+                    <text x="580" y="0" fill="#eab308" font-size="13">Storage: <tspan fill="#fff" font-family="Orbitron">3TB NVMe</tspan></text>
+                    <text x="780" y="0" fill="#a855f7" font-size="13">Power: <tspan fill="#fff" font-family="Orbitron">PUE 1.2</tspan></text>
+                    <text x="980" y="0" fill="#00ff88" font-size="13">Uptime: <tspan fill="#fff" font-family="Orbitron">99.99%</tspan></text>
                 </g>
             </svg>
         </div>
-        <p class="big-graphic-label">Real-time monitoring and control for AI operations</p>
-    </section>
-
-    <!-- EPIC GRAPHIC 9: Digital Universe -->
-    <section class="big-graphic-section">
-        <div class="big-graphic-container">
-            <svg viewBox="0 0 1200 450" class="big-graphic-svg">
-                <defs>
-                    <radialGradient id="universeCore" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#00f0ff;stop-opacity:0.8"/>
-                        <stop offset="30%" style="stop-color:#ff00ff;stop-opacity:0.4"/>
-                        <stop offset="60%" style="stop-color:#00ff88;stop-opacity:0.2"/>
-                        <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
-                    </radialGradient>
-                </defs>
-
-                <text x="600" y="40" text-anchor="middle" fill="#a855f7" font-family="Orbitron" font-size="22">DIGITAL KNOWLEDGE UNIVERSE</text>
-
-                <!-- Central Core -->
-                <circle cx="600" cy="250" r="80" fill="url(#universeCore)">
-                    <animate attributeName="r" values="80;90;80" dur="4s" repeatCount="indefinite"/>
-                </circle>
-                <text x="600" y="245" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="14">KNOWLEDGE</text>
-                <text x="600" y="265" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="14">CORE</text>
-
-                <!-- Orbiting Data Clusters -->
-                <g>
-                    <!-- Orbit 1 -->
-                    <circle cx="600" cy="250" r="140" fill="none" stroke="rgba(0,240,255,0.2)" stroke-width="1"/>
-                    <g>
-                        <circle cx="740" cy="250" r="30" fill="rgba(0,240,255,0.3)" stroke="#00f0ff" stroke-width="2"/>
-                        <text x="740" y="245" text-anchor="middle" fill="#00f0ff" font-size="8">CODE</text>
-                        <text x="740" y="258" text-anchor="middle" fill="#00f0ff" font-size="8">PATTERNS</text>
-                        <animateTransform attributeName="transform" type="rotate" values="0 600 250;360 600 250" dur="20s" repeatCount="indefinite"/>
-                    </g>
-                </g>
-
-                <g>
-                    <!-- Orbit 2 -->
-                    <circle cx="600" cy="250" r="200" fill="none" stroke="rgba(255,0,255,0.2)" stroke-width="1"/>
-                    <g>
-                        <circle cx="400" cy="250" r="35" fill="rgba(255,0,255,0.3)" stroke="#ff00ff" stroke-width="2"/>
-                        <text x="400" y="245" text-anchor="middle" fill="#ff00ff" font-size="8">LANGUAGE</text>
-                        <text x="400" y="258" text-anchor="middle" fill="#ff00ff" font-size="8">MODELS</text>
-                        <animateTransform attributeName="transform" type="rotate" values="0 600 250;-360 600 250" dur="30s" repeatCount="indefinite"/>
-                    </g>
-                </g>
-
-                <g>
-                    <!-- Orbit 3 -->
-                    <ellipse cx="600" cy="250" rx="280" ry="140" fill="none" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
-                    <g>
-                        <circle r="25" fill="rgba(0,255,136,0.3)" stroke="#00ff88" stroke-width="2">
-                            <animateMotion dur="25s" repeatCount="indefinite" path="M880,250 A280,140 0 1,1 879,250"/>
-                        </circle>
-                        <text dy="5" text-anchor="middle" fill="#00ff88" font-size="7">
-                            <animateMotion dur="25s" repeatCount="indefinite" path="M880,250 A280,140 0 1,1 879,250"/>
-                            DOCS
-                        </text>
-                    </g>
-                </g>
-
-                <!-- Knowledge Clusters -->
-                <g transform="translate(100, 150)">
-                    <circle r="40" cx="40" cy="40" fill="rgba(234,179,8,0.2)" stroke="#eab308" stroke-width="2"/>
-                    <text x="40" y="35" text-anchor="middle" fill="#eab308" font-size="9">TRAINING</text>
-                    <text x="40" y="50" text-anchor="middle" fill="#eab308" font-size="9">DATA</text>
-                </g>
-
-                <g transform="translate(1020, 150)">
-                    <circle r="40" cx="40" cy="40" fill="rgba(255,102,0,0.2)" stroke="#ff6600" stroke-width="2"/>
-                    <text x="40" y="35" text-anchor="middle" fill="#ff6600" font-size="9">CONTEXT</text>
-                    <text x="40" y="50" text-anchor="middle" fill="#ff6600" font-size="9">MEMORY</text>
-                </g>
-
-                <g transform="translate(100, 300)">
-                    <circle r="35" cx="35" cy="35" fill="rgba(168,85,247,0.2)" stroke="#a855f7" stroke-width="2"/>
-                    <text x="35" y="35" text-anchor="middle" fill="#a855f7" font-size="9">RAG</text>
-                    <text x="35" y="48" text-anchor="middle" fill="#a855f7" font-size="9">CORPUS</text>
-                </g>
-
-                <g transform="translate(1030, 300)">
-                    <circle r="35" cx="35" cy="35" fill="rgba(255,107,107,0.2)" stroke="#ff6b6b" stroke-width="2"/>
-                    <text x="35" y="35" text-anchor="middle" fill="#ff6b6b" font-size="9">USER</text>
-                    <text x="35" y="48" text-anchor="middle" fill="#ff6b6b" font-size="9">HISTORY</text>
-                </g>
-
-                <!-- Connection Lines -->
-                <g stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="5,5">
-                    <line x1="180" y1="190" x2="520" y2="250"/>
-                    <line x1="1020" y1="190" x2="680" y2="250"/>
-                    <line x1="170" y1="335" x2="520" y2="270"/>
-                    <line x1="1030" y1="335" x2="680" y2="270"/>
-                </g>
-
-                <!-- Floating Data Particles -->
-                <g>
-                    <circle r="3" fill="#00f0ff"><animateMotion dur="8s" repeatCount="indefinite" path="M100,100 Q600,50 1100,100 T100,100"/></circle>
-                    <circle r="3" fill="#ff00ff"><animateMotion dur="10s" repeatCount="indefinite" path="M1100,400 Q600,450 100,400 T1100,400"/></circle>
-                    <circle r="2" fill="#00ff88"><animateMotion dur="12s" repeatCount="indefinite" path="M200,250 Q600,150 1000,250 Q600,350 200,250"/></circle>
-                </g>
-
-                <!-- Stats -->
-                <g transform="translate(150, 430)">
-                    <text x="0" y="0" fill="#a855f7" font-size="11">Knowledge Nodes: <tspan fill="#fff">2.4M</tspan></text>
-                    <text x="220" y="0" fill="#00f0ff" font-size="11">Embeddings: <tspan fill="#fff">768-dim</tspan></text>
-                    <text x="440" y="0" fill="#ff00ff" font-size="11">Retrieval: <tspan fill="#fff">&lt;100ms</tspan></text>
-                    <text x="660" y="0" fill="#00ff88" font-size="11">Accuracy: <tspan fill="#fff">94.7%</tspan></text>
-                </g>
-            </svg>
-        </div>
-        <p class="big-graphic-label">Vast knowledge repositories powering contextual AI responses</p>
-    </section>
-
-    <!-- EPIC GRAPHIC 10: AI Core Reactor -->
-    <section class="big-graphic-section">
-        <div class="big-graphic-container">
-            <svg viewBox="0 0 1200 450" class="big-graphic-svg">
-                <defs>
-                    <radialGradient id="reactorCore" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1"/>
-                        <stop offset="30%" style="stop-color:#00f0ff;stop-opacity:0.7"/>
-                        <stop offset="60%" style="stop-color:#ff00ff;stop-opacity:0.4"/>
-                        <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
-                    </radialGradient>
-                    <filter id="reactorGlow">
-                        <feGaussianBlur stdDeviation="10" result="blur"/>
-                        <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
-                </defs>
-
-                <text x="600" y="40" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="24" filter="url(#reactorGlow)">AI INFERENCE REACTOR</text>
-
-                <!-- Reactor Core -->
-                <circle cx="600" cy="250" r="100" fill="url(#reactorCore)" filter="url(#reactorGlow)">
-                    <animate attributeName="r" values="100;110;100" dur="2s" repeatCount="indefinite"/>
-                </circle>
-
-                <!-- Inner Rings -->
-                <circle cx="600" cy="250" r="60" fill="none" stroke="#00ff88" stroke-width="2" opacity="0.8">
-                    <animateTransform attributeName="transform" type="rotate" values="0 600 250;360 600 250" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="600" cy="250" r="80" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.6">
-                    <animateTransform attributeName="transform" type="rotate" values="360 600 250;0 600 250" dur="5s" repeatCount="indefinite"/>
-                </circle>
-
-                <!-- Energy Beams -->
-                <g stroke="#00ff88" stroke-width="3" opacity="0.7">
-                    <line x1="500" y1="250" x2="200" y2="250"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="1s" repeatCount="indefinite"/></line>
-                    <line x1="700" y1="250" x2="1000" y2="250"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="1s" repeatCount="indefinite" begin="0.5s"/></line>
-                    <line x1="600" y1="150" x2="600" y2="80"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="1s" repeatCount="indefinite" begin="0.25s"/></line>
-                    <line x1="600" y1="350" x2="600" y2="400"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="1s" repeatCount="indefinite" begin="0.75s"/></line>
-                </g>
-
-                <!-- Containment Ring -->
-                <circle cx="600" cy="250" r="140" fill="none" stroke="#ff00ff" stroke-width="4" stroke-dasharray="20,10">
-                    <animateTransform attributeName="transform" type="rotate" values="0 600 250;360 600 250" dur="10s" repeatCount="indefinite"/>
-                </circle>
-
-                <!-- Power Nodes -->
-                <g>
-                    <circle cx="200" cy="250" r="30" fill="rgba(0,240,255,0.3)" stroke="#00f0ff" stroke-width="2"/>
-                    <text x="200" y="245" text-anchor="middle" fill="#00f0ff" font-size="8">POWER</text>
-                    <text x="200" y="258" text-anchor="middle" fill="#00f0ff" font-size="8">INPUT</text>
-                    <circle cx="200" cy="280" r="5" fill="#00ff88"><animate attributeName="opacity" values="1;0;1" dur="0.5s" repeatCount="indefinite"/></circle>
-                </g>
-
-                <g>
-                    <circle cx="1000" cy="250" r="30" fill="rgba(255,0,255,0.3)" stroke="#ff00ff" stroke-width="2"/>
-                    <text x="1000" y="245" text-anchor="middle" fill="#ff00ff" font-size="8">INFERENCE</text>
-                    <text x="1000" y="258" text-anchor="middle" fill="#ff00ff" font-size="8">OUTPUT</text>
-                    <circle cx="1000" cy="280" r="5" fill="#ff00ff"><animate attributeName="opacity" values="1;0;1" dur="0.5s" repeatCount="indefinite"/></circle>
-                </g>
-
-                <g>
-                    <circle cx="600" cy="80" r="25" fill="rgba(234,179,8,0.3)" stroke="#eab308" stroke-width="2"/>
-                    <text x="600" y="78" text-anchor="middle" fill="#eab308" font-size="8">COOLANT</text>
-                    <text x="600" y="90" text-anchor="middle" fill="#eab308" font-size="8">52°C</text>
-                </g>
-
-                <g>
-                    <circle cx="600" cy="400" r="25" fill="rgba(118,185,0,0.3)" stroke="#76b900" stroke-width="2"/>
-                    <text x="600" y="398" text-anchor="middle" fill="#76b900" font-size="8">VRAM</text>
-                    <text x="600" y="410" text-anchor="middle" fill="#76b900" font-size="8">184GB</text>
-                </g>
-
-                <!-- Core Label -->
-                <text x="600" y="240" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="12">TENSOR</text>
-                <text x="600" y="258" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="12">CORE</text>
-                <text x="600" y="276" text-anchor="middle" fill="#00ff88" font-size="10">ACTIVE</text>
-
-                <!-- Efficiency Gauges -->
-                <g transform="translate(100, 100)">
-                    <rect width="120" height="80" rx="10" fill="rgba(0,0,0,0.5)" stroke="#00ff88"/>
-                    <text x="60" y="25" text-anchor="middle" fill="#888" font-size="10">EFFICIENCY</text>
-                    <text x="60" y="55" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="20">94.7%</text>
-                </g>
-
-                <g transform="translate(980, 100)">
-                    <rect width="120" height="80" rx="10" fill="rgba(0,0,0,0.5)" stroke="#ff00ff"/>
-                    <text x="60" y="25" text-anchor="middle" fill="#888" font-size="10">THROUGHPUT</text>
-                    <text x="60" y="55" text-anchor="middle" fill="#ff00ff" font-family="Orbitron" font-size="20">18 t/s</text>
-                </g>
-
-                <g transform="translate(100, 350)">
-                    <rect width="120" height="60" rx="10" fill="rgba(0,0,0,0.5)" stroke="#00f0ff"/>
-                    <text x="60" y="25" text-anchor="middle" fill="#888" font-size="10">POWER DRAW</text>
-                    <text x="60" y="48" text-anchor="middle" fill="#00f0ff" font-family="Orbitron" font-size="16">570W</text>
-                </g>
-
-                <g transform="translate(980, 350)">
-                    <rect width="120" height="60" rx="10" fill="rgba(0,0,0,0.5)" stroke="#eab308"/>
-                    <text x="60" y="25" text-anchor="middle" fill="#888" font-size="10">CONTEXT</text>
-                    <text x="60" y="48" text-anchor="middle" fill="#eab308" font-family="Orbitron" font-size="16">128K</text>
-                </g>
-
-                <!-- Status Bar -->
-                <g transform="translate(200, 430)">
-                    <text x="0" y="0" fill="#00ff88" font-size="11">Status: <tspan fill="#fff">OPTIMAL</tspan></text>
-                    <text x="180" y="0" fill="#00f0ff" font-size="11">Reactor: <tspan fill="#fff">STABLE</tspan></text>
-                    <text x="360" y="0" fill="#ff00ff" font-size="11">Load: <tspan fill="#fff">87%</tspan></text>
-                    <text x="500" y="0" fill="#eab308" font-size="11">Temp: <tspan fill="#fff">52°C</tspan></text>
-                    <text x="640" y="0" fill="#76b900" font-size="11">Memory: <tspan fill="#fff">184GB</tspan></text>
-                </g>
-            </svg>
-        </div>
-        <p class="big-graphic-label">High-performance inference engine powering real-time AI</p>
+        <p class="big-graphic-label">Enterprise AI infrastructure - 6 cabinet visualization of actual deployment</p>
     </section>
 
     <!-- ========================================== -->
