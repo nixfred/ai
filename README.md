@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://nixfred.com/ai/">
-    <img src="share-image.png" alt="Fred Nix — AI Infrastructure Engineer: 184 GB VRAM, four NVIDIA L40S GPUs, and more than 100,000 AI sessions" width="100%">
+    <img src="share-image.png" alt="Fred Nix, AI Infrastructure Engineer: hex, a Minisforum MS-S1 MAX with 128GB unified memory" width="100%">
   </a>
 </p>
 
@@ -25,12 +25,12 @@ This repository powers two complementary, static portfolio experiences:
 | [`/ai/`](https://nixfred.com/ai/) | A narrative case study covering the problem, architecture, deployment model, operational capabilities, and lessons behind an enterprise AI platform. |
 | [`/ai/resumerge/`](https://nixfred.com/ai/resumerge/) | A résumé-oriented view connecting that platform work to roles, skills, outcomes, and career history. |
 
-The headline implementation is the **BTA AI POD**: an enterprise AI environment described by the portfolio as four NVIDIA L40S GPUs, 184 GB of aggregate VRAM, nine hot-swappable models, and more than 100,000 AI sessions.
+The current local AI lab is **hex**, a Minisforum MS-S1 MAX with 128GB of unified memory. A prior headline implementation, the **BTA AI POD**, was an enterprise AI environment with four NVIDIA L40S GPUs, 184 GB of aggregate VRAM, nine hot-swappable models, and more than 100,000 AI sessions.
 
 ```mermaid
 flowchart LR
     A[Enterprise AI requirements] --> B[Repeatable infrastructure design]
-    B --> C[GPU compute<br/>4 × NVIDIA L40S]
+    B --> C[Current local lab<br/>hex, Minisforum MS-S1 MAX, 128GB unified memory]
     B --> D[Network + storage]
     C --> E[Containerized model serving]
     D --> E
@@ -92,9 +92,9 @@ flowchart LR
 mindmap
   root((AI platform))
     Compute
-      NVIDIA L40S
-      GPU memory planning
-      Model hot-swapping
+      hex (Minisforum MS-S1 MAX)
+      128GB unified memory
+      On-prem GPU deployments
     Platform
       Containers
       Model serving
